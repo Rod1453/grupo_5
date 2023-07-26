@@ -13,7 +13,7 @@ Me gusta todo lo relacioando con la tecnologia y es por eso  que elegi seguir co
 
 __Joaquin__: Hola, mi nombre es Salazar Joaquin. Me gusta la programación y todo lo referido a ella, ademas me gusta leer y hacer deportes.😁😊
 
-__Lourdes__: Mi nombre es Lourdes Segovia pero me suelen llamar lu. Y hace unos meces atrás me di cuanta que me gusta la programación y las computadoras.
+__Lourdes__: Mi nombre es Lourdes Segovia pero me suelen llamar lu. Y hace unos meses atrás me di cuanta que me gusta la programación y las computadoras.
 
 __Jimena__: Soy Jimena Coca, estudio la carrera de APU, me gustan los videojuegos y ver películas.
 
