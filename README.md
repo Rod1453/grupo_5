@@ -21,5 +21,5 @@ Referentes:
 Elegimos la siguiente pagina como referencia por su paletas de colores llamativas y animaciones
 1.https://libreriaaguilar.com.ar/
 
-
+estructura de la seccion "noticias"
 2.https://www.yenny-elateneo.com/
