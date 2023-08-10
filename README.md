@@ -32,3 +32,8 @@ Elegimos la siguiente pagina como referencia por su paletas de colores llamativa
    Elegimos esta página por la forma en que se muestran los libros.
 
 5. https://www.penguinlibros.com/ar/
+
+
+## Trello
+
+https://trello.com/invite/b/onKd8gL8/ATTIdad951b952548279b0d193874852c26d52BEE24E/tablero
