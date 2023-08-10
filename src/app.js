@@ -4,7 +4,7 @@ const path = require("path");
 
 app.use(express.static("public"));
 
-app.listen(3000, () => "servidor escuchando en el puerto 3000");
+app.listen(3000, () => console.log("servidor escuchando en el puerto 3000"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "./views/home.html"))
