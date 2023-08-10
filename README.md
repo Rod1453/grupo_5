@@ -17,6 +17,8 @@ __Lourdes__: Mi nombre es Lourdes Segovia pero me suelen llamar lu. Y hace unos 
 
 __Jimena__: Soy Jimena Coca, estudio la carrera de APU, me gustan los videojuegos y ver películas.
 
+__Maxi__: Hola soy maxi, tengo 23 y soy de jujuy, me gusta la programacion y sus buenas practicas, aunque no las siga a veces
+
 ## Referentes:
 
 1. https://libreriaaguilar.com.ar/
