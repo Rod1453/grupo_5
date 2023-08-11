@@ -1,0 +1,16 @@
+form label{
+    margin-bottom: 7px;
+    text-align: left;
+}
+
+form input {
+    outline: none;
+    border: none;
+    color: #252525;
+    border-bottom: solid 1px #666;
+    padding: 10px 15px 10px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: #ebebeb;
+    margin-bottom: 20px;
+}

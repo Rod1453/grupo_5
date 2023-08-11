@@ -17,6 +17,8 @@ __Lourdes__: Mi nombre es Lourdes Segovia pero me suelen llamar lu. Y hace unos 
 
 __Jimena__: Soy Jimena Coca, estudio la carrera de APU, me gustan los videojuegos y ver películas.
 
+__Maxi__: Hola soy maxi, tengo 23 y soy de jujuy, me gusta la programacion y sus buenas practicas, aunque no las siga a veces
+
 ## Referentes:
 
 1. https://libreriaaguilar.com.ar/
@@ -32,3 +34,8 @@ Elegimos la siguiente pagina como referencia por su paletas de colores llamativa
    Elegimos esta página por la forma en que se muestran los libros.
 
 5. https://www.penguinlibros.com/ar/
+
+
+## Trello
+
+https://trello.com/invite/b/onKd8gL8/ATTIdad951b952548279b0d193874852c26d52BEE24E/tablero
