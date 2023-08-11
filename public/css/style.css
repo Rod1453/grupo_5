@@ -125,6 +125,69 @@ header {
 
 /*Fin del navbar */
 
+/* FOOTER */
+.logofooter{
+    width: 40%;
+    display: none;
+}
+
+.logofooter i{
+    font-size: 40px;
+    display: none;
+}
+
+.logofooter h3{
+    display: none;
+    position: absolute;
+    top: 19px;
+    left: 11px;
+    color: grey;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    background-color: beige; 
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+   height: 10px;
+}
+
+.descripcionfooter{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.listafooter{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.iconosfooter{
+    font-size: 30px;
+    color: #0e6c0a ;
+    padding: 10px 20px 15px 20px;
+}
+
+.iconos{
+    display: flex;
+
+}
+/* FIN FOOTER*/
 @media (min-width: 720px) {
     /* Navbar */
     /*Gestionar la posicion de cada div del header: buscador y los botones */
@@ -154,4 +217,59 @@ header {
         flex-direction: row;
     }
     /*Fin del navbar */
+
+    /*FOOTER*/
+    .flexfooter{
+display: flex;
+    }
+    
+    .logofooter{
+        width: 10%;
+        display: block;
+    }
+    
+    .logofooter i{
+        font-size: 40px;
+        display: block;
+        padding-left: 10px;
+    }
+    
+    .logofooter h3{
+        display: inline;
+        position: absolute;
+        top: 105px;
+        left: 11px;
+        color: grey;
+        
+    }
+
+    .cajapadre{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80%;
+        align-items: flex-start;
+        padding: 0px 0px 20px 20px;
+    }
+
+    .categoriasfooter{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: flex-start;
+    }
+    
+    .listafooter{
+        text-align: left;
+    }
+
+    .flex-container{
+        flex-direction: column;
+        margin-left: 30px;
+    }
+
+    .iconos{
+        display: flex;
+    }
 }
