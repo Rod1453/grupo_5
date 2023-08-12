@@ -13,7 +13,7 @@ Me gusta todo lo relacioando con la tecnologia y es por eso  que elegi seguir co
 
 __Joaquin__: Hola, mi nombre es Salazar Joaquin. Me gusta la programación y todo lo referido a ella, ademas me gusta leer y hacer deportes.😁😊
 
-__Lourdes__: Mi nombre es Lourdes Segovia, tengo 16 años y estoy cuersando mi 4to año en una escuela tecnica. 
+__Lourdes__: Mi nombre es Lourdes Segovia, tengo 16 años y estoy cursando mi 4to año en una escuela tecnica. 
 
 __Jimena__: Soy Jimena Coca, estudio la carrera de APU, me gustan los videojuegos y ver películas.
 
