@@ -1,9 +1,9 @@
-form label{
+main form label{
     margin-bottom: 7px;
     text-align: left;
 }
 
-form input {
+main form input {
     outline: none;
     border: none;
     color: #252525;

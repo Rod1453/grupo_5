@@ -24,64 +24,105 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
     width: 100%;
 }
 
 .logo {
-    width: 40%;
+    width: 30%;
+    position: relative;
+    min-width: 120px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #000;
 }
 
 .logo i{
-    font-size: 40px;
+    font-size: 42px;
 }
 
 .logo h3{
     display: inline;
     position: absolute;
-    top: 19px;
-    left: 11px;
+    top: 10px;
+    left: -1px;
     color: grey;
 }
 
 .buscador {
-    width: 70%;
+    width: 100%;
     margin-top: 10px;
+    text-align: center;
 }
 
 .buscador input {
     border: none;
     padding: 7px 10px;
     border-radius: 20px;
-    width: 100%;
+    width: 70%;
 }
 
 .ingreso-registro {
-    width: 60%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
 }
 
-.ingreso-registro a{
+.ingreso-registro i {
+    font-size: 25px;
+}
+/* Icono user
+.user-h {
+    padding-right: 10px;
+    position: relative;
+}
+
+.user-h:hover .dropdown-login-h {
+    display: block;
+}
+
+.dropdown-login-h {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px #000;
+    border-radius: 0 0 2px 2px;
+}
+
+.dropdown-login-h li {
+    padding-top: 5px;
+}
+
+.dropdown-login-h a{
+    text-decoration: none;
+    color: #000;
+} */
+
+.opciones-login > a{
     background-color: var(--gris-oscuro);
     color: white;
     text-decoration: none;
     padding: 7px 10px;
     border-radius: 20px;
     margin-right: 5px;
+    font-size: 13px;
 }
 
-.ingreso-registro i {
-    font-size: 25px;
+.cart-h a{
+    text-decoration: none;
+    color: #000;
 }
 
 .burger-menu {
-    text-align: center;
+    text-align: left;
     font-size: 20px;
-    width: 100%;
+    width: 15%;
 }
 
 .burger-menu i{
@@ -91,7 +132,6 @@ header {
     padding-left: 8px;
     padding-right: 8px;
     border-radius: 5px; /*bordes redondos*/
-    margin-top: 10px;
 }
 
 .menu-opciones {
@@ -121,6 +161,7 @@ header {
     text-decoration: none;
     font-weight: bold;
     color: black;
+    font-size: 14px;
 }
 
 /*Fin del navbar */
@@ -232,7 +273,7 @@ footer{
 
 body{
     font-family: 'Montserrat', sans-serif;
-   height: 10px;
+    height: 10px;
 }
 
 .descripcionfooter{
@@ -267,24 +308,26 @@ body{
 @media (min-width: 720px) {
     /* Navbar */
     /*Gestionar la posicion de cada div del header: buscador y los botones */
-    .logo:nth-child(1) {
-        order: 1;
+    .logo{
         width: 20%;
     }
 
-    .buscador:nth-child(3) {
-        order: 2;
+    .buscador {
         width: 40%;
         margin-top: 0;
     }
 
-    .ingreso-registro:nth-child(2) {
-        order: 3;
-        width: 40%;
+    .buscador input {
+        width: 100%;
     }
 
-    .burger-menu:nth-child(4) {
+    .ingreso-registro{
         order: 4;
+        width: 40%;
+        justify-content: flex-end;
+    }
+
+    .burger-menu {
         display: none;
     }
 
@@ -306,8 +349,9 @@ body{
     }
     
     .logofooter{
-        width: 10%;
+        width: 15%;
         display: block;
+        position: relative;
     }
     
     .logofooter i{
@@ -319,8 +363,8 @@ body{
     .logofooter h3{
         display: inline;
         position: absolute;
-        top: 105px;
-        left: 11px;
+        top: 9px;
+        left: 9px;
         color: grey;
         
     }

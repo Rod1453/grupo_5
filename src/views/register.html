@@ -20,39 +20,50 @@
   <body>
     <header>
       <div class="cabezera">
-        <div class="logo">
-          <i class="fa-solid fa-book-open"></i>
-          <h3>Book Market</h3>
-        </div>
-        <div class="ingreso-registro">
-          <a href="#">Ingresar</a>
-          <a href="#">Registrarse</a>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-        <div class="buscador">
-          <form action="#">
-            <input
-              type="text"
-              name="buscador"
-              id="buscador"
-              placeholder="Buscar"
-            />
-          </form>
-        </div>
-        <div class="burger-menu">
-          <i class="fa-solid fa-bars"></i>
-        </div>
+          <div class="burger-menu">
+            <a href="#"><i class="fa-solid fa-bars"></i></a>
+          </div>
+          <div class="logo">
+            <a href="/">
+              <i class="fa-solid fa-book-open"></i>
+              <h3>Book Market</h3>
+            </a>
+          </div>
+          <div class="ingreso-registro">
+              <!-- <div class="user-h">
+                  <i class="fa-solid fa-user"></i>
+                  <ul class="dropdown-login-h">
+                      <li><a href="/login">Ingresar</a></li>
+                      <li><a href="/register">Registrarse</a></li>
+                  </ul>
+              </div> -->
+              <div class="opciones-login">
+                  <a href="/login">Ingresar</a>
+              </div>
+              <div class="opciones-login">
+                  <a href="/register">Registrarse</a>
+              </div>
+              <div class="cart-h">
+                  <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
+          <div class="buscador">
+              <form action="#">
+                  <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+              </form>
+          </div>
       </div>
       <div class="menu-opciones">
-        <ul class="opciones">
-          <li><a href="#">Categorias</a></li>
-          <li><a href="#">Editoriales</a></li>
-          <li><a href="#">Gift Cards</a></li>
-          <li><a href="#">Populares</a></li>
-          <li><a href="#">Ofertas</a></li>
-        </ul>
+          <ul class="opciones">
+              <li><a href="#">Categorias</a></li>
+              <li><a href="#">Editoriales</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Populares</a></li>
+              <li><a href="#">Ofertas</a></li>
+          </ul>
       </div>
     </header>
+
     <main>
       <form action="">
         <h2 class="title">Regístrate</h2>
@@ -72,6 +83,7 @@
         >
       </form>
     </main>
+
     <footer></footer>
   </body>
 </html>
