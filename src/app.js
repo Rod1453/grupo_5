@@ -1,19 +1,18 @@
 const express = require("express");
 const app = express();
-const path = require("path");
+const mainRoute = require("./routes/mainRoute");
+const userRoute = require("./routes/usersRoute");
+const productRoute = require("./routes/productsRoute");
 
 app.use(express.static("public"));
 
+app.set("view engine", "ejs");
+app.set("views", "./src/views");
+
 app.listen(3000, () => console.log("servidor escuchando en el puerto 3000"));
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "./views/home.html"))
-});
+app.use(mainRoute);
 
-app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "./views/login.html"))
-});
+app.use(userRoute);
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "./views/register.html"))
-});
+app.use('/products',productRoute);
