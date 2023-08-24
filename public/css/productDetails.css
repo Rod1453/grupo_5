@@ -1,0 +1,98 @@
+/* body {
+    font-family: 'Open Sans',sans-serif;
+} */
+
+main {
+    background-color: #fff;
+}
+
+.libro {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.libro-portada {
+    width: 100%;
+}
+
+.libro-portada img{
+    width: 100%;
+    box-shadow: -10px 5px 10px rgba(0,0,0,0.3);
+}
+
+.libro-detalles {
+    width: 100%;
+}
+
+.libro-titulo {
+    margin-top: 20px;
+}
+
+.libro-titulo h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.libro-stock {
+    margin-bottom: 15px;
+}
+
+.libro-disponibilidad {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.libro-precio {
+    margin-bottom: 15px;
+}
+
+.btn-agregar {
+    height: 40px;
+    line-height: 2px;
+    min-width: 150px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.libro-sinopsis {
+    margin-top: 20px;
+}
+
+.libro-descripcion {
+    margin-top: 30px;
+}
+
+.libro-descripcion div {
+    margin-top: 15px;
+}
+
+.libro-descripcion h3{
+    font-weight: 100;
+}
+
+@media (min-width: 720px ) {
+    .libro {
+        flex-direction: row;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .libro-detalles {
+        padding: 0 40px;
+    }
+
+    .libro-portada {
+        max-width: 300px;
+    }
+
+    .libro-titulo {
+        margin: 0;
+    }
+}
