@@ -112,6 +112,7 @@ header {
     border-radius: 20px;
     margin-right: 5px;
     font-size: 13px;
+    display: block;
 }
 
 .cart-h a{

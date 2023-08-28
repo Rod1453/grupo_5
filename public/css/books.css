@@ -1,0 +1,295 @@
+main {
+    background-color: #fff;
+}
+
+.libro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    transition: all 0.5s ease;
+}
+
+.libro:hover {
+    transform: scale(1.1);
+}
+
+.libro a {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    width: 80%;
+}
+
+.libro-portada {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.libro-portada img {
+    width: 100%;
+    box-shadow: -10px 10px 15px rgba(0,0,0,0.5);
+}
+
+.libro-titulo {
+    margin-top: 20px;
+}
+
+/* Segunda Card */
+
+.libreria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 45px;
+    color: #fff;
+    background-color: rgba(0,0,0,.4);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 3px;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+    /* position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(3, 35, 54,1); */
+    border-top: solid 1px #f3f3f3;
+    height: 40px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+    max-height: 180px;
+    overflow: hidden;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+/* Fin Segunda Card */
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container .card3 {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    background: linear-gradient(#2196f3, #2196f3 30%, #1d3548 30%, #1d3548);
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: -5px 10px 10px rgba(0,0,0,0.7);
+}
+
+.container .card3 .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 100000;
+    border-radius: 20px;
+    overflow: hidden;
+    transform-origin: top;
+}
+
+.container .card3:hover .imgBx {
+    transform: translateY(30px) scale(0.5);
+}
+
+.container .card3 .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card3 .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    transform: translateY(100%);
+    transition: 0.5s;
+}
+
+.container .card3:hover .content {
+    transform: translateY(0);
+}
+
+.container .card3 .content .details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container .card3 .content .details h2 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.container .card3 .content .details p {
+    color: #fff;
+    font-size: 12px;
+    max-height: 60px;
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+.container .card3 .content .details a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px;
+    margin-top: 10px;
+    color: #2fb4cc;
+    border: 1px solid #2fb4cc;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.container .card3 .content .details a:hover {
+    background: #2fb4cc;
+    color: #fff;
+}
+
+.container .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 290px;
+}
+
+@media (min-width: 576px) {
+    .estanteria {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .libro {
+        width: 50%;
+        min-width: 200px;
+    }
+
+    .libro-portada img{
+        max-width: 200px;
+    } 
+}
+
+@media (min-width:720px) {
+    .libro {
+        width: 33.3%;
+    }
+
+    /* ------------------ */
+    .libreria {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media (min-width:960px) {
+    .libro {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .libro {
+        width: 20%;
+    }
+}
