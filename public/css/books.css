@@ -1,6 +1,4 @@
-main {
-    background-color: #fff;
-}
+
 
 .libro {
     display: flex;
@@ -153,7 +151,7 @@ main {
     position: relative;
     width: 250px;
     height: 320px;
-    background: linear-gradient(#2196f3, #2196f3 30%, #1d3548 30%, #1d3548);
+    background: linear-gradient(#94B49F, #CEE5D0 30%, #1d3548 30%, #1d3548);
     margin: 20px;
     border-radius: 20px;
     overflow: hidden;

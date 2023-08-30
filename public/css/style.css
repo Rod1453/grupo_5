@@ -1,6 +1,9 @@
 :root{
     --gris-oscuro: #666;
     --gris-claro: #ebebeb;
+    --verde-pastel-claro: #CEE5D0;
+    --verde-pastel-oscuro: #94B49F;
+    --color-main: #FCF8E8;
 }
 
 * {
@@ -27,6 +30,7 @@ header {
     justify-content: space-between;
     padding: 10px;
     width: 100%;
+    background-color: var(--verde-pastel-claro);
 }
 
 .logo {
@@ -50,6 +54,18 @@ header {
     top: 10px;
     left: -1px;
     color: grey;
+}
+
+.logo-img {
+    position: relative;
+    top: 2px;
+    max-width: 150px;
+}
+
+.logo-img a img {
+    width: 100%;
+    border: 2px solid var(--gris-claro);
+    box-shadow: -3px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 .buscador {
@@ -105,7 +121,7 @@ header {
 } */
 
 .opciones-login > a{
-    background-color: var(--gris-oscuro);
+    background-color: #ECB390;
     color: white;
     text-decoration: none;
     padding: 7px 10px;
@@ -117,7 +133,7 @@ header {
 
 .cart-h a{
     text-decoration: none;
-    color: #000;
+    color: var(--gris-oscuro);
 }
 
 .burger-menu {
@@ -138,6 +154,9 @@ header {
 .menu-opciones {
     display: none;
     width: 100%;
+    background-color: var(--verde-pastel-claro);
+    border-top: 1px solid var(--gris-claro);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 .opciones{
@@ -146,15 +165,13 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #c8c4c4;
 }
 
 .opciones li {
     list-style-type: none;
     width: 20%;
     text-align: center;
-    border-right: 1px solid var(--gris-oscuro);
-    border-left: 1px solid var(--gris-oscuro);
+    border-right: 1px solid var(--gris-claro);
     padding: 10px;
 }
 
@@ -169,7 +186,7 @@ header {
 
 /*comienzo del main*/
 main{
-    background-color: #D9D9D9;
+    background-color: var(--color-main);
     padding: 20px;
 }
 .noticias{
@@ -247,6 +264,7 @@ main{
 .logofooter{
     width: 40%;
     display: none;
+    padding: 5px;
 }
 
 .logofooter i{
@@ -269,7 +287,7 @@ ul{
 }
 
 footer{
-    background-color: beige; 
+    background-color: var(--verde-pastel-claro); 
 }
 
 body{

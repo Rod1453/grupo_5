@@ -2,10 +2,6 @@
     font-family: 'Open Sans',sans-serif;
 } */
 
-main {
-    background-color: #fff;
-}
-
 .libro {
     display: flex;
     flex-direction: column;
