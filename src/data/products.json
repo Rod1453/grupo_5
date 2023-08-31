@@ -1,0 +1,65 @@
+const libro = [
+    {
+        categoria:"cincia y tecnologia",
+        img:"/img/codigo futuro.jpg",
+        nombre:"Codigo Futuro",
+        decripcion:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:1000
+        
+    },
+    {
+        categoria:"cincia y tecnologia",
+        img:"/img/exito en marketin digital.jpg",
+        nombre:"Exito en Marketing",
+        decripcion:"Loremi psum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:1500,
+        
+    },
+    {
+        categoria:"ciencia ficcion",
+        img:"/img/eclipse solar.jpg",
+        nombre:"Eclipse Solar",
+        decripcion:"Loremi psum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:2000,
+        
+    },
+    {
+        categoria:"ciencia ficcion",
+        img:"/img/reyes caidos.jpg",
+        nombre:"Reyes Caidos",
+        decripcion:"Loremi psum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:1000,
+        
+    },
+    {
+        categoria:"romance",
+        img:"/img/un amor para siempre.jpg",
+        nombre:"Un amor para siempre",
+        decripcion:"Loremi psum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:2000,
+        
+    },
+    {
+        categoria:"romance",
+        img:"/img/ojo dulce.jpg",
+        nombre:"Ojo dulce",
+        decripcion:"Loremi psum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:2000,
+        
+    },
+    {
+        categoria:"cocina",
+        img:"/img/mis recetas.jpg",
+        nombre:"Mis recetas",
+        decripcion:"Loremi psum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:2000,
+        
+    },
+    {
+        categoria:"cocina",
+        img:"/img/Libro de recetas de cocina.jpg",
+        nombre:"Libro de recetas de cocina",
+        decripcion:"Loremi psum dolor sit amet consectetur adipisicing elit. Nam recusandae amet libero nostrum labore nihil, illo minus atque totam laborum tenetur non tempora veniam numquam corporis ullam et nobis est!",
+        precio:2000,
+    },
+]
