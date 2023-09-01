@@ -1,0 +1,82 @@
+[{
+    "id":1,
+    "nombre":"Milagros",
+    "apellido":"Aguilar",
+    "email":"milagrosaguilar@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"administrador",
+    "imagen":"/img/images.png"
+},{
+    "id":2,
+    "nombre":"Nicolas",
+    "apellido":"Mirnada",
+    "email":"nicolasmiranda@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"administrador",
+    "imagen":"/img/images.png"
+},{
+    "id":3,
+    "nombre":"Josue",
+    "apellido":"Perez",
+    "email":"josueperez@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"administrador",
+    "imagen":"/img/images.png"
+},{
+    "id":4,
+    "nombre":"Candela",
+    "apellido":"Valdez",
+    "email":"candelavaldez@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"administrador",
+    "imagen":"/img/images.png"
+},{
+    "id":5,
+    "nombre":"Lucas",
+    "apellido":"Bianco",
+    "email":"lucasbianco@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"administrador",
+    "imagen":"/img/images.png"
+},{
+    "id":6,
+    "nombre":"Melani",
+    "apellido":"Sarapura",
+    "email":"melanisarapura@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"comprador",
+    "imagen":"/img/images.png"
+},{
+    "id":7,
+    "nombre":"Facundo",
+    "apellido":"Guerra",
+    "email":"facundoguerra@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"comprador",
+    "imagen":"/img/images.png"
+},{
+    "id":8,
+    "nombre":"Exequiel",
+    "apellido":"Caserez",
+    "email":"exequielcaseres@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"comprador",
+    "imagen":"/img/images.png"
+},{
+    "id":9,
+    "nombre":"Martin",
+    "apellido":"Rivera",
+    "email":"martinrivera@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"comprador",
+    "imagen":"/img/images.png"
+},{
+    "id":10,
+    "nombre":"Geremias",
+    "apellido":"Velasques",
+    "email":"geremiasvelasques@gmail.com",
+    "contraseña":"12345678",
+    "categoria":"comprador",
+    "imagen":"/img/images.png"
+}
+]
