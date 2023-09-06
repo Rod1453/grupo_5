@@ -1,6 +1,6 @@
 <%- include('../partials/headParte1') %>
 <!--Aqui se agregan los estilos personales-->
-<link rel="stylesheet" href="../css/productDetails.css">
+<link rel="stylesheet" href="/css/productDetails.css">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Open+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
 
 <%- include('../partials/headParte2') %>
@@ -10,50 +10,44 @@
 <main>
     <section class="libro">
         <div class="libro-portada">
-            <img src="/img/images.png" alt="libro">
+            <img src="/img/<%= book.imagen %>" alt="<%= book.titulo %>">
         </div>
         <div class="libro-detalles">
             <div class="libro-titulo">
-                <h1>Titulo del Libro</h1>
+                <h1><%= book.titulo %></h1>
             </div>
             <div class="libro-stock">
                 <span class="libro-disponibilidad">Disponibilidad: </span><span>En stock</span>
             </div>
             <div class="libro-precio">
-                <h3>Precio 00,00$$</h3>
+                <h3><%= book.precio %> $$</h3>
             </div>
             <div>
                 <button class="btn-agregar">Añadir</button>
             </div>
             <div class="libro-sinopsis">
                 <h3>Sinópsis</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut alias sint provident 
-                    tenetur aspernatur non cumque assumenda omnis inventore iure! Rerum doloremque 
-                    veniam consectetur officiis odio illo nihil harum dolores?
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id corporis suscipit, 
-                    sapiente praesentium, laudantium voluptates neque, non nihil tempora porro libero nisi 
-                    facilis? Eligendi dolores id quod blanditiis hic! Atque!
-                </p>
+                <p><%= book.sinopsis %></p>
             </div>
             <div class="libro-descripcion">
                 <h3>Descripción</h3>
                 <div>
-                    <strong>Autor: </strong>Nombre del autor
+                    <strong>Autor: </strong><%= book.autor %>
                 </div>
                 <div>
-                    <strong>Idioma: </strong>Español
+                    <strong>Idioma: </strong><%= book.idioma %>
                 </div>
                 <div>
-                    <strong>Editorial: </strong>Nombre de la editorial
+                    <strong>Editorial: </strong><%= book.editorial %>
                 </div>
                 <div>
-                    <strong>Tipo de tapa: </strong>Dura/Blanda
+                    <strong>Tipo de tapa: </strong><%= book.tipo_tapa %>
                 </div>
                 <div>
-                    <strong>Categoria: </strong>Historia
+                    <strong>Categoria: </strong><%= book.tematica %>
                 </div>
                 <div>
-                    <strong>Páginas: </strong>130
+                    <strong>Páginas: </strong><%= book.paginas %>
                 </div>
             </div>
         </div>

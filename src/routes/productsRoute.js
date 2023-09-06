@@ -4,7 +4,7 @@ const productRoute = express.Router();
 
 productRoute.get('/', productController.index)
 
-productRoute.get('/details', productController.details);
+productRoute.get('/detail/:id', productController.details);
 
 productRoute.get('/create', productController.create);
 

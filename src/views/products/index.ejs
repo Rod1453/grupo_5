@@ -1,6 +1,6 @@
 <%- include('../partials/headParte1') %>
 <!--Aqui se agregan los estilos personales-->
-<link rel="stylesheet" href="../css/books.css">
+<link rel="stylesheet" href="/css/books.css">
 
 <%- include('../partials/headParte2') %>
 
@@ -10,78 +10,25 @@
     <h2>Listado de Productos</h2>
 
     <div class="container">
+        <% books.map( book => { %>
         <article class="book">
             <div class="card3">
                 <div class="imgBx">
-                    <img src="../img/codigoFuturo.jpg" alt="Titulo del libro">
+                    <img src="<%= book.imagen %>" alt="<%= book.titulo %>">
                 </div>
                 <div class="content">
                     <div class="details">
                         <!-- <h2>Resumen</h2> -->
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis velit 
-                            fugiat natus est excepturi saepe mollitia architecto modi accusamus.
+                            <%= book.sinopsis %>>
                         </p>
-                        <a href="/products/details">Ver más</a>
+                        <a href="/products/detail/<%= book.id %>">Ver más</a>
                     </div>
                 </div>
             </div>
-            <h2>Codigo Futuro</h2>
+            <h2><%= book.titulo %></h2>
         </article>
-        <article class="book">
-            <div class="card3">
-                <div class="imgBx">
-                    <img src="../img/codigoFuturo.jpg" alt="Titulo del libro">
-                </div>
-                <div class="content">
-                    <div class="details">
-                        <!-- <h2>Resumen</h2> -->
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis velit 
-                            fugiat natus est excepturi saepe mollitia architecto modi accusamus.
-                        </p>
-                        <a href="/products/details">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <h2>Codigo Futuro</h2>
-        </article>
-        <article class="book">
-            <div class="card3">
-                <div class="imgBx">
-                    <img src="../img/codigoFuturo.jpg" alt="Titulo del libro">
-                </div>
-                <div class="content">
-                    <div class="details">
-                        <!-- <h2>Resumen</h2> -->
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis velit 
-                            fugiat natus est excepturi saepe mollitia architecto modi accusamus.
-                        </p>
-                        <a href="/products/details">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <h2>Codigo Futuro</h2>
-        </article>
-        <article class="book">
-            <div class="card3">
-                <div class="imgBx">
-                    <img src="../img/codigoFuturo.jpg" alt="Titulo del libro">
-                </div>
-                <div class="content">
-                    <div class="details">
-                        <!-- <h2>Resumen</h2> -->
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis velit 
-                            fugiat natus est excepturi saepe mollitia architecto modi accusamus.
-                        </p>
-                        <a href="/products/details">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <h2>Codigo Futuro</h2>
-        </article>
+        <% }) %>
     </div>
 
 </main>

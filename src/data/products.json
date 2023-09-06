@@ -27,7 +27,7 @@
         "precio": 2277.99,
         "sinopsis": "Polvo de sueños es la novena y penúltima entrega de la saga «Malaz: El Libro de los Caídos», la decalogía originalmente publicada entre 1999 y 2011 que ha convertido al escritor canadiense Steven Erikson en una de las mayores voces de la fantasía épica contemporánea. Desde entonces, esta obra maestra de la imaginación está considerada una de las series más ambiciosas del género de los últimos años.",
         "stock": 9,
-        "imagen": "../img/Polvo de sueños.jpeg",
+        "imagen": "../img/PolvoDeSueños.jpg",
         "fecha_emision": 2018
     },
     {
@@ -117,7 +117,7 @@
         "precio": 16.050,
         "sinopsis": "Como la matemática financiera es a la vez una herramienta de las finanzas, la obra lo ayudará en el estudio de las Finanzas de la Empresa o los Derivados financieros. Los comentarios en la web a las resoluciones de ejercicios creemos que serán muy útiles para facilitar la comprensión de los temas.El libro está destinado esencialmente a los estudiantes de las carreras de grado y postgrado, o por ejecutivos financieros y otros profesionales que utilizan la matemática financiera en su labor cotidiana.",
         "stock": 8,
-        "imagen":  "../img/matematicasFinancieras2ed.jpeg ",
+        "imagen":  "../img/matematicaFinancieras2ed.jpeg ",
         "fecha_emision": 2022
     },
     {
@@ -147,7 +147,7 @@
         "precio": 26.650,
         "sinopsis": "Una obra extraordinaria para descubrir la belleza de las plantas de nuestro entorno, que ofrece una visión excepcional de 275 especies de flores, árboles y arbustos europeos, gracias a la reproducción de unas láminas fotográficas de una calidad asombrosa, que producen literalmente la impresión de tener la planta ante nuestros ojos. Cada lámina se acompaña de una ficha descriptiva que incluye: el significado del nombre en latín de la planta, el origen de su nombre en castellano, y la denominación en catalán, gallego y euskera; las características botánicas que permiten una identificación precisa de la planta, con remisiones a las partes de la misma ilustradas en la lámina; información sobre otras variedades, también ilustradas, lo que eleva el número de plantas descritas en la obra a 400. Esta obra de los botánicos Pierre y Délia Vignes se completa con datos relativos a las utilidades de la planta (cocina, cosmética, jardinería, propiedades medicinales, etc.).",
         "stock": 6,
-        "imagen":  "../img/herbarioDePlantasSilvestres.jpeg",
+        "imagen":  "../img/herbarioDePlantasSilvestre.jpeg",
         "fecha_emision": 2021
     },{
         "id":  11,
@@ -161,7 +161,7 @@
         "precio":  26000,
         "sinopsis": "Yunjae nació con alexitimia, una enfermedad que le impide reconocer y expresar emociones, y que está asociada a un crecimiento inferior de la amígdala cerebral, generalmente del tamaño de una almendra. Su madre soltera y su abuela hacen todo lo posible por ayudarlo a relacionarse con los demás, si bien en la escuela se enfrenta a la intimidación y al rechazo de sus compañeros por su comportamiento indolente. Pero un día ocurre la tragedia: en la tarde de su decimosexto cumpleaños, la madre y la abuela de Yunjae son víctimas de un violento ataque callejero que termina con su abuela muerta y su madre postrada en cama en estado vegetativo. Yunjae tendrá entonces que vivir solo y encargarse de la librería de libros usados de su familia. Es entonces cuando sucede el inesperado encuentro con Gon, un chico volátil, propenso al mal humor y a las peleas, que ha sufrido una infancia traumática. Ambos son polos opuestos, pero el rechazo que sufren --cada uno por diferentes razones-- por una sociedad que no los entiende, hace que pasen de ser enemigos, a cultivar una peculiar amistad. Podrá la relación con Gon, el encuentro con una chica llamada Dora que sólo sueña con correr, y su intervencion." ,
         "stock":  5,
-        "imagen":  "../img/almendra.jpg",
+        "imagen":  "../img/almentra.jpg",
         "fecha_emision": 2017 
       }
 ]
