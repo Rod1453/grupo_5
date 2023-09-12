@@ -1,98 +1,35 @@
 <%- include('../partials/headParte1') %>
 <!--Aqui se agregan los estilos personales-->
+<link rel="stylesheet" href="/css/books.css">
 <%- include('../partials/headParte2') %>
 
 <%- include('../partials/header') %>
 
 <main>
-    <div class="noticias">
-        <div class="carrusel">
-            <i class="fa-solid fa-chevron-right fa-rotate-180"></i>
-            <p class="noticia">NOTICIAS</p> 
-            <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <div class="puntos">
-        <i class="fa-solid fa-circle"></i>
-            <i class="fa-solid fa-circle"></i>
-            <i class="fa-solid fa-circle"></i>
-        </div>
-    </div>
     
-    <div class="libros">
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
+    <h2>Listado de Productos</h2>
+
+    <div class="container">
+        <% books.map( book => { %>
+        <article class="book">
+            <div class="card3">
+                <div class="imgBx">
+                    <img src="<%= book.imagen %>" alt="<%= book.titulo %>">
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <!-- <h2>Resumen</h2> -->
+                        <p>
+                            <%= book.sinopsis %>>
+                        </p>
+                        <a href="/products/detail/<%= book.id %>">Ver más</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
-            </div>
-        </div>
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
-            </div>
-        </div>
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
-            </div>
-        </div>
-    </div>
-    <div class="libros">
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
-            </div>
-        </div>
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
-            </div>
-        </div>
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
-            </div>
-        </div>
-        <div class="conteiner">
-            <p class="imagenes">Imagen</p>
-            <div class="detalles">
-                <p class="titulo">Libro</p>
-                <p class="detalle">Detalle</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo at iure enim? Incidunt architecto odio laboriosam tempora! Totam ducimus optio quos impedit magni.</p>
-                <p class="precio">Precio</p>
-            </div>
-        </div>
+            <h2><%= book.titulo %></h2>
+        </article>
+        <% }) %>
+
     </div>
     
 </main>

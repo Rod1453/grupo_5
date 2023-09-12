@@ -1,0 +1,36 @@
+<%- include('../partials/headParte1') %>
+    <!--Aqui se agregan los estilos personales-->
+    <link rel="stylesheet" href="../css/userDetails.css" />
+
+    <%- include('../partials/headParte2') %>
+
+        <%- include('../partials/header') %>
+
+            <main class="container">
+                <div class="container-foto">
+                    <img id="foto-perfil" src="<%= user.imagen %>" alt="img">
+                </div>
+                <div class="datos">
+                    <h2 class="username"><%=user.email %></h2>
+                    <br>
+                    <p>Nombre</p>
+                    <div class="campo">
+                        <div><%=user.nombre %></div>
+                    </div>
+                    <p>Apellido</p>
+                    <div class="campo">
+                        <div><%=user.apellido %></div>
+                    </div>
+                    <p>Categoria</p>
+                    <div class="campo">
+                        <div><%=user.categoria %></div>
+                    </div>
+                    <p>Password</p>
+                    <div class="campo">
+                        <div><%=user.contraseña %></div>
+                    </div>
+                    
+                </div>
+            </main>
+
+            <%- include('../partials/footer') %>
