@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const booksJson = fs.readFileSync(path.join(__dirname,"../data/products.json"),"utf-8");
-const books = JSON.parse(booksJson);
+const booksFilePath = path.join(__dirname, "../data/products.json");
+const books = JSON.parse(fs.readFileSync(booksFilePath, "utf-8"));
 
 const productController = {
     index: (req, res)=>{
@@ -14,6 +14,64 @@ const productController = {
     },
     create: (req, res)=>{
         res.render('products/productForm');
+    },
+    store: (req, res)=>{
+        const data = req.body;
+        const index = books[books.length - 1].id;
+
+        const newBook = {
+            id: index + 1,
+            titulo: data.titulo,
+            autor: data.autor,
+            editorial: data.editorial,
+            paginas: data.paginas,
+            idioma: data.idioma,
+            tipo_tapa: data.tipo_tapa,
+            tematica: data.tematica,
+            precio: data.precio,
+            sinopsis: data.sinopsis,
+            stock: data.stock,
+            fecha_emision: data.lanzamiento,
+            imagen: req.file.filename,
+        };
+        books.push(newBook);
+        fs.writeFileSync(booksFilePath, JSON.stringify(books));
+        res.redirect("/products");
+    },
+    edit: (req, res)=>{
+        const id = req.params.id;
+        const product = books.find((product) => product.id == id);
+        console.log(product);
+        res.render("products/productEdit", { book: product });
+    },
+    update: (req, res)=>{
+        const id = req.params.id;
+        const editProduct = req.body;
+        const index = books.findIndex((product) => product.id == id);
+    
+        books[index].titulo = editProduct.titulo;
+        books[index].autor = editProduct.autor;
+        books[index].editorial = editProduct.editorial;
+        books[index].paginas = editProduct.paginas
+        books[index].idioma = editProduct.idioma;
+        books[index].tipo_tapa = editProduct.tipo_tapa;
+        books[index].tematica = editProduct.tematica;
+        books[index].precio = editProduct.precio;
+        books[index].sinopsis = editProduct.sinopsis;
+        books[index].stock = editProduct.stock;
+        books[index].fecha_emision = editProduct.fecha_emision;
+    
+        fs.writeFileSync(booksFilePath, JSON.stringify(books));
+    
+        res.redirect("/products");
+    },
+    destroy: (req, res)=>{
+        const id = req.params.id;
+
+        const leftProducts = books.filter((product) => product.id != id);
+        fs.writeFileSync(booksFilePath, JSON.stringify(leftProducts));
+
+        res.redirect("/products");
     }
 }
 
