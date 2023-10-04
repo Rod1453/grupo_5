@@ -4,6 +4,9 @@ const productController = require('../controllers/productController');
 const productRoute = express.Router();
 const multer = require("multer");
 
+const validateRegister = require("../middleware/productValidatorMiddleware");
+const validateEdit = require("../middleware/productEditValidatorMiddleware");
+
 // configuracion de multer
 
 const storage = multer.diskStorage({
@@ -24,11 +27,11 @@ productRoute.get('/detail/:id', productController.details);
 
 productRoute.get('/create', productController.create);
 
-productRoute.post('/create', uploadFile.single("portada"), productController.store);
+productRoute.post('/create', uploadFile.single("portada"), validateRegister, productController.store);
 
 productRoute.get('/edit/:id', productController.edit);
 
-productRoute.post('/edit/:id', productController.update);
+productRoute.post('/edit/:id', validateEdit, productController.update);
 
 productRoute.post("/delete/:id", productController.destroy);
 

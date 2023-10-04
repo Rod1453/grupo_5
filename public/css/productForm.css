@@ -57,6 +57,10 @@ transition: background-color .5s ease-out;
 outline: 0;
 }
 
+.error-msg {
+    color: red;
+}
+
 /* Responsive */
 @media (min-width: 720px){
     .libro-form form{
