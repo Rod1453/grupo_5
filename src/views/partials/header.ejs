@@ -16,6 +16,15 @@
             
         </div>
         <div class="ingreso-registro">
+            <% if( locals.userLogged) { %>
+                <div class="user-h">
+                    <i class="fa-solid fa-user"></i>
+                    <ul class="dropdown-login-h">
+                        <li><a href="/user/profile">Perfil</a></li>
+                        <li><a href="/user/logout">Logout</a></li>
+                    </ul>
+                </div>
+            <% }else{ %>
             <!-- <div class="user-h">
                 <i class="fa-solid fa-user"></i>
                 <ul class="dropdown-login-h">
@@ -24,11 +33,12 @@
                 </ul>
             </div> -->
             <div class="opciones-login">
-                <a href="/login">Ingresar</a>
+                <a href="/user/login">Ingresar</a>
             </div>
             <div class="opciones-login">
-                <a href="/register">Registrarse</a>
+                <a href="/user/register">Registrarse</a>
             </div>
+            <% } %>
             <div class="cart-h">
                 <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>

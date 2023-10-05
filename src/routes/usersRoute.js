@@ -2,10 +2,18 @@ const express = require('express');
 const userController = require('../controllers/userController');
 const userRoute = express.Router();
 
-userRoute.get("/login", userController.login);
+const loginValidate = require('../middleware/loginValidatorMiddleware');
+const guestMiddleware = require("../middleware/guestMiddleware");
+const authMiddleware = require("../middleware/authMiddleware");
 
-userRoute.get("/register", userController.register);
+userRoute.get("/register",guestMiddleware, userController.register);
 
-userRoute.get("/getUser/:id",userController.getUser);
+userRoute.get("/login", guestMiddleware, userController.login);
+
+userRoute.post("/loginProcess", loginValidate, userController.loginProcess);
+
+userRoute.get("/profile", authMiddleware, userController.profile);
+
+userRoute.get("/logout", userController.logout);
 
 module.exports = userRoute;

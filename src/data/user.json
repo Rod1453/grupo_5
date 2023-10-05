@@ -3,7 +3,7 @@
     "nombre":"Milagros",
     "apellido":"Aguilar",
     "email":"milagrosaguilar@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"administrador",
     "imagen":"/img/images.png"
 },{
@@ -11,7 +11,7 @@
     "nombre":"Nicolas",
     "apellido":"Mirnada",
     "email":"nicolasmiranda@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"administrador",
     "imagen":"/img/images.png"
 },{
@@ -19,7 +19,7 @@
     "nombre":"Josue",
     "apellido":"Perez",
     "email":"josueperez@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"administrador",
     "imagen":"/img/images.png"
 },{
@@ -27,7 +27,7 @@
     "nombre":"Candela",
     "apellido":"Valdez",
     "email":"candelavaldez@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"administrador",
     "imagen":"/img/images.png"
 },{
@@ -35,7 +35,7 @@
     "nombre":"Lucas",
     "apellido":"Bianco",
     "email":"lucasbianco@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"administrador",
     "imagen":"/img/images.png"
 },{
@@ -43,7 +43,7 @@
     "nombre":"Melani",
     "apellido":"Sarapura",
     "email":"melanisarapura@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"comprador",
     "imagen":"/img/images.png"
 },{
@@ -51,7 +51,7 @@
     "nombre":"Facundo",
     "apellido":"Guerra",
     "email":"facundoguerra@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"comprador",
     "imagen":"/img/images.png"
 },{
@@ -59,7 +59,7 @@
     "nombre":"Exequiel",
     "apellido":"Caserez",
     "email":"exequielcaseres@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"comprador",
     "imagen":"/img/images.png"
 },{
@@ -67,7 +67,7 @@
     "nombre":"Martin",
     "apellido":"Rivera",
     "email":"martinrivera@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"comprador",
     "imagen":"/img/images.png"
 },{
@@ -75,8 +75,16 @@
     "nombre":"Geremias",
     "apellido":"Velasques",
     "email":"geremiasvelasques@gmail.com",
-    "contraseña":"12345678",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
     "categoria":"comprador",
+    "imagen":"/img/images.png"
+},{
+    "id":11,
+    "nombre":"Joaquin",
+    "apellido":"Salazar",
+    "email":"joaquin@gmail.com",
+    "password":"$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm",
+    "categoria":"administrador",
     "imagen":"/img/images.png"
 }
 ]

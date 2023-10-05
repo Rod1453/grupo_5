@@ -7,18 +7,32 @@
 <%- include('../partials/header') %>
 
 <main>
-  <form action="">
+  <form action="/user/loginProcess" method="post">
     <h2 class="title">Iniciar Sesión</h2>
     <label>
       <i class="fa-solid fa-user"></i>
-      <input type="text" id="username" placeholder="correo electrónico"/>
+      <input type="text" name="email" id="email" placeholder="correo electrónico" 
+      value="<%= locals.oldData || locals.email? locals.oldData? locals.oldData.email: email:null %>"/>
+      <% if(locals.errors && errors.email){ %>
+        <div>
+          <p class="error-msg">*<%= errors.email.msg %></p>
+        </div>
+      <% } %>
     </label>
     <label>
       <i class="fa-solid fa-lock"></i>
-      <input type="password" id="password" placeholder="contraseña" />
+      <input type="password" name="password" id="password" placeholder="contraseña" />
+      <% if(locals.errors && errors.password){ %>
+        <div>
+          <p class="error-msg">*<%= errors.password.msg %></p>
+        </div>
+      <% } %>
+    </label>
+    <label>
+      <input type="checkbox" name="remember_user"> Recordar mi usuario
     </label>
     <div>
-        <button id="button">Iniciar sesión</button>
+        <button type="submit" id="button">Iniciar sesión</button>
     </div>
     <span class="link">¿No tienes una cuenta?<a href="#"> Registrate</a></span
     >

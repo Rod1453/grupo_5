@@ -4,6 +4,20 @@ const mainRoute = require("./routes/mainRoute");
 const userRoute = require("./routes/usersRoute");
 const productRoute = require("./routes/productsRoute");
 
+const session = require("express-session");
+const cookies = require("cookie-parser");
+const userLoggedMiddleware = require("./middleware/userLoggedMiddleware");
+
+app.use(
+    session({
+      secret: "Hi, i have a secret",
+      resave: false,
+      saveUninitialized: false,
+    })
+);
+app.use(cookies());
+app.use(userLoggedMiddleware);
+
 app.use(express.static("public"));
 
 app.set("view engine", "ejs");
@@ -16,6 +30,6 @@ app.listen(3000, () => console.log("servidor escuchando en el puerto 3000"));
 
 app.use(mainRoute);
 
-app.use(userRoute);
+app.use('/user',userRoute);
 
 app.use('/products',productRoute);

@@ -91,7 +91,7 @@ header {
 .ingreso-registro i {
     font-size: 25px;
 }
-/* Icono user
+/*Icono user*/
 .user-h {
     padding-right: 10px;
     position: relative;
@@ -118,7 +118,7 @@ header {
 .dropdown-login-h a{
     text-decoration: none;
     color: #000;
-} */
+}
 
 .opciones-login > a{
     background-color: #ECB390;
