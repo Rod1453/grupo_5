@@ -62,6 +62,19 @@ const userController = {
       req.session.destroy();
       res.redirect("/");
     },
+    save: (req,res)=>{
+        const resultValidations = validationResult(req);
+        if (resultValidations.errors.length > 0) {
+            res.render("users/register", {
+                errors: resultValidations.mapped(),
+                oldData: req.body,
+            });
+        }else{
+            console.log(req.body);
+            res.redirect('/user/register');
+        }
+        
+    }
 }
 
 module.exports = userController;
