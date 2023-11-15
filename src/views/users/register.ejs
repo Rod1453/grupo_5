@@ -15,6 +15,11 @@
     <% if (locals.errors && errors.nombre) { %>
       <p class="error-msg">*<%= errors.nombre.msg %></p>
     <% } %>
+    <label for="apellido">apellido</label>
+    <input type="text" id="apellido" name="apellido"  value="<%=locals.oldData?oldData.apellido:null %>"/>
+    <% if (locals.errors && errors.apellido) { %>
+      <p class="error-msg">*<%= errors.apellido.msg %></p>
+    <% } %>
     <label for="email">Correo electrónico</label>
     <input type="text" id="email" name="email"  value="<%=locals.oldData?oldData.email:null %>"/>
     <% if (locals.errors && errors.email) { %>

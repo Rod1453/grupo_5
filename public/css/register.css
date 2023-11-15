@@ -14,3 +14,7 @@ main form input {
     background-color: #ebebeb;
     margin-bottom: 20px;
 }
+
+main form {
+    margin: 10px 10px;
+}
