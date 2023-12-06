@@ -1,4 +1,5 @@
 const { body } = require('express-validator');
+const path = require('path');
 
 const validations = [
     body("titulo")
@@ -23,27 +24,27 @@ const validations = [
         .notEmpty().withMessage("Este campo no puede estar vacio.")
         .isFloat({ min:1 }).withMessage("Este campo debe contener un número."),
     body("lanzamiento")
-        .notEmpty().withMessage("Este campo no puede estar vacio.")
-        .isInt({ min:1500 }).withMessage("Este campo debe ser un año valido."),
+        .notEmpty().withMessage("Este campo no puede estar vacio."),
+        //.isDate().withMessage("Este campo debe ser una fecha valida."),
     body("sinopsis")
         .notEmpty().withMessage("Este campo no puede estar vacio."),
     body("portada").custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = [".jpg", ".png", ".gif"];
-    
+        let acceptedExtensions = [".jpg",".jpeg", ".png", ".gif"];
+        
         if (!file) {
             throw new Error("Tienes que subir una imagen.");
         } else {
             let fileExtension = path.extname(file.originalname);
             if (!acceptedExtensions.includes(fileExtension)) {
-            throw new Error(
-                `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-                ", "
-                )}`
-            );
+                throw new Error(
+                    `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
+                    ", "
+                    )}`
+                );
             }
         }
-    
+        
         return true;
     }),
 ];

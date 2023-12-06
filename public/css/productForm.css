@@ -61,6 +61,14 @@ outline: 0;
     color: red;
 }
 
+.libro-form form select {
+    width: 100%;
+    padding: 8px;
+    border:rgba(78, 74, 74, 0.1) solid 1px;
+    border-radius: 5px;
+    border-bottom: 1px solid #94B49F;
+}
+
 /* Responsive */
 @media (min-width: 720px){
     .libro-form form{

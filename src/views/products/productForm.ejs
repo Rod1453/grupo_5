@@ -68,8 +68,13 @@
             <div>
               <p>
                 <label for="tipo_tapa">Tipo de Tapa</label>
-                <input type="text" name="tipo_tapa" id="tipo_tapa"
-                  value="<%=locals.oldData?oldData.tipo_tapa:null %>"/>
+                <select name="tipo_tapa">
+                  <option value="" >--Seleccione un tipo--</option>
+                  <option value="Blanda" <%=locals.oldData && oldData.tipo_tapa == 'Blanda'? 'Selected':'' %>>Blanda</option>
+                  <option value="Dura" <%=locals.oldData && oldData.tipo_tapa == 'Dura'? 'Selected':'' %> >Dura</option>
+                </select>
+                <!-- <input type="text" name="tipo_tapa" id="tipo_tapa"
+                  value="<%=locals.oldData?oldData.tipo_tapa:null %>"/> -->
                 <% if (locals.errors && errors.tipo_tapa) { %>
                   <p class="error-msg">*<%= errors.tipo_tapa.msg %></p>
                 <% } %>
@@ -78,8 +83,14 @@
             <div>
               <p>
                 <label for="tematica">Temática</label>
-                <input type="text" name="tematica" id="tematica"
-                  value="<%=locals.oldData?oldData.tematica:null %>"/>
+                <select name="tematica">
+                  <option value="" >--Seleccione una tematica--</option>
+                  <% themes.map(item => { %>
+                    <option value="<%= item.id %>" <%=locals.oldData && oldData.tematica == item.id?'selected':'' %>><%= item.nombre %></option>
+                  <% }) %>
+                </select>
+                <!-- <input type="text" name="tematica" id="tematica"
+                  value="<%=locals.oldData?oldData.tematica:null %>"/> -->
                 <% if (locals.errors && errors.tematica) { %>
                   <p class="error-msg">*<%= errors.tematica.msg %></p>
                 <% } %>
@@ -107,9 +118,10 @@
             </div>
            <div>
             <p>
-              <label for="lanzamiento">Año de Lanzamiento</label>
-              <input type="text" name="lanzamiento" id="lanzamiento" pattern="^\d{4}$" placeholder="YYYY"
-              value="<%=locals.oldData?oldData.lanzamiento:null %>"/>
+              <label for="lanzamiento">Fecha de Lanzamiento</label>
+              <input type="date" name="lanzamiento" id="lanzamiento" value="<%=locals.oldData?oldData.lanzamiento:null %>">
+              <!-- <input type="text" name="lanzamiento" id="lanzamiento" pattern="^\d{4}$" placeholder="YYYY-MM-DD"
+              value="<%=locals.oldData?oldData.lanzamiento:null %>"/> -->
                 <% if (locals.errors && errors.lanzamiento) { %>
                   <p class="error-msg">*<%= errors.lanzamiento.msg %></p>
                 <% } %>

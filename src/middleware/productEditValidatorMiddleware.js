@@ -23,8 +23,8 @@ const validations = [
         .notEmpty().withMessage("Este campo no puede estar vacio.")
         .isFloat({ min:1 }).withMessage("Este campo debe contener un número."),
     body("lanzamiento")
-        .notEmpty().withMessage("Este campo no puede estar vacio.")
-        .isInt({ min:1500 }).withMessage("Este campo debe ser un año valido."),
+        .notEmpty().withMessage("Este campo no puede estar vacio."),
+        // .isDate().withMessage("Este campo debe ser un año valido."),
     body("sinopsis")
         .notEmpty().withMessage("Este campo no puede estar vacio."),
 ];

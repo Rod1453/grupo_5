@@ -31,8 +31,8 @@ productRoute.post('/create', uploadFile.single("portada"), validateRegister, pro
 
 productRoute.get('/edit/:id', productController.edit);
 
-productRoute.post('/edit/:id', validateEdit, productController.update);
+productRoute.put('/edit/:id', validateEdit, productController.update);
 
-productRoute.post("/delete/:id", productController.destroy);
+productRoute.delete("/delete/:id", productController.destroy);
 
 module.exports = productRoute;

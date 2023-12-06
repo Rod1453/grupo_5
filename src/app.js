@@ -8,6 +8,8 @@ const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middleware/userLoggedMiddleware");
 
+const methodOverride = require('method-override');
+
 app.use(
     session({
       secret: "Hi, i have a secret",
@@ -25,6 +27,8 @@ app.set("views", "./src/views");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use(methodOverride('_method'));
 
 app.listen(3000, () => console.log("servidor escuchando en el puerto 3000"));
 
