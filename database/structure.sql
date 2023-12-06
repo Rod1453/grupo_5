@@ -30,7 +30,7 @@ CREATE TABLE `user` (
 	`nombre` varchar(50) NOT NULL,
 	`apellido` varchar(50) NOT NULL,
 	`email` varchar(100) NOT NULL UNIQUE,
-	`password` varchar(30) NOT NULL,
+	`password` varchar(150) NOT NULL,
 	`categoria` varchar(50) NOT NULL DEFAULT 'comprador',
 	`imagen` varchar(150),
 	PRIMARY KEY (`id`)

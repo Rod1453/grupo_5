@@ -1,6 +1,6 @@
 <%- include('../partials/headParte1') %>
     <!--Aqui se agregan los estilos personales-->
-    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
 
     <%- include('../partials/headParte2') %>
 
@@ -8,7 +8,7 @@
 
             <main class="container">
                 <div class="container-foto">
-                    <img id="foto-perfil" src="<%=user.imagen %>" alt="img">
+                    <img id="foto-perfil" src="/img/users/<%=user.imagen %>" alt="img">
                 </div>
                 <div class="datos">
                     <h2 class="username"><%=user.email %></h2>
