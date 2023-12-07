@@ -37,7 +37,7 @@ const userController = {
                         //delete userToLogin.password;
                         req.session.userLogged = userToLogin;
                         if (typeof req.body.remember_user !== 'undefined') {
-                            res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
+                            res.cookie("email", req.body.email, { maxAge: 3600 * 1000 });
                         }
                         return res.redirect('/user/profile');
                     } else {

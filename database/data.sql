@@ -19,3 +19,8 @@ VALUES (1,'Codigo Futuro','Martín Martorell','Granica',192,'Español','Blanda',
 /*Agregando Usuarios*/
 INSERT INTO user(nombre,apellido,email,password,categoria,imagen)
 VALUES ('Juan','Perez','juanperez@gmail.com','$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6447fSTyCmuBsToh9egXf1D4.nm','Administrador','images.png');
+
+
+/*Agregando Orden*/
+INSERT INTO `order`(user_id,fecha)
+VALUES (1,'2023/12/01');

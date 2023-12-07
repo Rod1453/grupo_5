@@ -36,7 +36,7 @@ CREATE TABLE `user` (
 	PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `shopping_cart` (
+CREATE TABLE `order` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`user_id` INT NOT NULL,
 	`fecha` DATE NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `shopping_cart` (
 CREATE TABLE `detail` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`product_id` INT NOT NULL,
-	`carrito_id` INT NOT NULL,
+	`order_id` INT NOT NULL,
 	`precio` double NOT NULL,
 	`cantidad` INT NOT NULL,
 	PRIMARY KEY (`id`)
@@ -54,10 +54,10 @@ CREATE TABLE `detail` (
 
 ALTER TABLE `product` ADD CONSTRAINT `product_fk0` FOREIGN KEY (`theme_id`) REFERENCES `theme`(`id`);
 
-ALTER TABLE `shopping_cart` ADD CONSTRAINT `shopping_cart_fk0` FOREIGN KEY (`user_id`) REFERENCES `user`(`id`);
+ALTER TABLE `order` ADD CONSTRAINT `order_fk0` FOREIGN KEY (`user_id`) REFERENCES `user`(`id`);
 
 ALTER TABLE `detail` ADD CONSTRAINT `detail_fk0` FOREIGN KEY (`product_id`) REFERENCES `product`(`id`);
 
-ALTER TABLE `detail` ADD CONSTRAINT `detail_fk1` FOREIGN KEY (`carrito_id`) REFERENCES `shopping_cart`(`id`);
+ALTER TABLE `detail` ADD CONSTRAINT `detail_fk1` FOREIGN KEY (`order_id`) REFERENCES `order`(`id`);
 
 
