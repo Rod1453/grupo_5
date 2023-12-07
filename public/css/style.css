@@ -213,11 +213,15 @@ ul{
 footer{
     background-color: var(--verde-pastel-claro); 
     margin-top: 20px;
+    position: relative;
+    margin-top: auto;
 }
 
 body{
     font-family: 'Montserrat', sans-serif;
-    height: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .descripcionfooter{

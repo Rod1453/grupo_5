@@ -3,6 +3,7 @@ const app = express();
 const mainRoute = require("./routes/mainRoute");
 const userRoute = require("./routes/usersRoute");
 const productRoute = require("./routes/productsRoute");
+const orderRoute = require("./routes/orderRorute");
 
 const session = require("express-session");
 const cookies = require("cookie-parser");
@@ -37,3 +38,5 @@ app.use(mainRoute);
 app.use('/user',userRoute);
 
 app.use('/products',productRoute);
+
+app.use('/orders',orderRoute);

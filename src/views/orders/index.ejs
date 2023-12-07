@@ -1,0 +1,47 @@
+<%- include('../partials/headParte1') %>
+<!--Aqui se agregan los estilos personales-->
+<link rel="stylesheet" href="/css/orders.css">
+
+<%- include('../partials/headParte2') %>
+
+<%- include('../partials/header') %>
+
+<main>
+    <div class="container">
+        <h2>Lista de Pedidos</h2>
+        <article class="pedido">
+            <div class="divPedido">
+                <div class="divImagen">
+                    <div class="imagen">
+                        <img src="/img/images.png" alt="">
+                    </div>
+                </div>
+                <div class="infoPedido">
+                    <div class="numPedido">
+                        <h3>Numero de pedido</h3>
+                        <p>#0000001</p>
+                    </div>
+                    <div class="numPedido">
+                        <h3>Fecha de pedido</h3>
+                        <p>10/11/2023</p>
+                    </div>
+                </div>
+                <div class="infoPedido">
+                    <div class="numPedido">
+                        <h3>Cantidad de productos</h3>
+                        <p>2</p>
+                    </div>
+                    <h3>Total: 0.00$</h3>
+                </div>
+                <div class="verBtnPedido">
+                    <a class="btn-ver2" href="/orders/detail">Ver pedido</a>
+                </div>
+            </div>
+            <div class="verPedido">
+                <a class="btn-ver" href="#">Ver pedido</a>
+            </div>
+        </article>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
