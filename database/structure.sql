@@ -46,7 +46,7 @@ CREATE TABLE `order` (
 CREATE TABLE `detail` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`product_id` INT NOT NULL,
-	`order_id` INT NOT NULL,
+	`order_id` INT,
 	`precio` double NOT NULL,
 	`cantidad` INT NOT NULL,
 	PRIMARY KEY (`id`)

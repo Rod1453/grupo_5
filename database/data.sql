@@ -24,3 +24,7 @@ VALUES ('Juan','Perez','juanperez@gmail.com','$2a$10$UQpOUAsHtu09WnzWcwyPiOKltR6
 /*Agregando Orden*/
 INSERT INTO `order`(user_id,fecha)
 VALUES (1,'2023/12/01');
+
+/*Agregando productos al carrito*/
+INSERT INTO `detail`(product_id,order_id,precio,cantidad)
+VALUES (1,1,7810,2),(3,1,5900,1);
