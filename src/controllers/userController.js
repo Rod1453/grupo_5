@@ -19,49 +19,25 @@ const userController = {
     },
     loginProcess: async (req, res) => {
         const resultValidations = validationResult(req);
-        if (resultValidations.errors.length > 0) {
-            res.render("users/login", {
+        if (!resultValidations.isEmpty())
+            return res.render("users/login", {
                 errors: resultValidations.mapped(),
                 oldData: req.body,
             });
-        } else {
-            try{
-
-                const userToLogin = await db.User.findOne({where: {
-                    email: req.body.email
-                }});
-                //const userToLogin = users.find(user => user.email == req.body.email);
-                if (userToLogin) {
-                    const isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-                    if (isOkPassword) {
-                        //delete userToLogin.password;
-                        req.session.userLogged = userToLogin;
-                        if (typeof req.body.remember_user !== 'undefined') {
-                            res.cookie("email", req.body.email, { maxAge: 3600 * 1000 });
-                        }
-                        return res.redirect('/user/profile');
-                    } else {
-                        return res.render("users/login", {
-                            errors: {
-                                password: {
-                                    msg: "La contraseña es incorrecta."
-                                }
-                            },
-                            email: userToLogin.email
-                        });
+        const user = await db.User.findOne({ where: { email: req.body.email } });
+        if (!user || !bcryptjs.compareSync(req.body.password, user.password))
+            return res.render("users/login", {
+                errors: {
+                    sesion: {
+                        msg: "El usuario o contraseña es incorrecto"
                     }
-                }
-            }catch(error){
-                console.log(error);
-            }
+                },
+            });
+        req.session.userLogged = user;
+        if (typeof req.body.remember_user !== 'undefined') {
+            res.cookie("email", req.body.email, { maxAge: 3600 * 1000 });
         }
-        return res.render("users/login", {
-            errors: {
-                email: {
-                    msg: "No se encuentra este email."
-                }
-            }
-        });
+        return res.redirect('/user/profile');
     },
     profile: (req, res) => {
         return res.render("users/profile", {
@@ -73,51 +49,55 @@ const userController = {
         req.session.destroy();
         res.redirect("/");
     },
-    save: (req, res) => {
+    save: async (req, res) => {
         const resultValidations = validationResult(req);
-        if (!resultValidations.isEmpty()) {
-            res.render("users/register", {
+        if (!resultValidations.isEmpty())
+            return res.render("users/register", {
                 errors: resultValidations.mapped(),
                 oldData: req.body,
             });
-        } else {
-            let user = {
-                // id: users[users.length - 1].id + 1,
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                password: bcryptjs.hashSync(req.body.password, 10),
-                categoria: "Comprador",
-                imagen: "images.png"
-            }
-
-            req.session.userLogged = user;
-            db.User.create({...user})
+        let user = await db.User.findOne({ where: { email: req.body.email } });
+        if (user)
+            return res.render("users/register", {
+                errors: {
+                    email: {
+                        msg: "el email ya se encuentra en uso, prueba otro"
+                    }
+                },
+                oldData: req.body
+            });
+        user = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            categoria: "Comprador",
+            imagen: "images.png"
+        }
+        db.User.create({ ...user })
             .then(result => {
-                res.redirect('/user/profile')})
+                req.session.userLogged = result.dataValues;
+                if (typeof req.body.remember_user !== 'undefined') {
+                    res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
+                }
+                return res.redirect('/user/profile');
+            })
             .catch(error => {
                 console.log(error);
             })
-
-            //users.push(user);
-            ////fs.writeFileSync(usersFilePath, JSON.stringify(users));
-            //req.session.userLogged = user;
-            //res.redirect('/user/profile');
-        }
     },
-    update: async(req,res) => {
+    update: async (req, res) => {
         try {
             const resultValidations = validationResult(req);
             const user = await db.User.findByPk(req.body.id);
             if (!resultValidations.isEmpty()) {
-                console.log(resultValidations.errors)
                 res.render("users/userEdit", {
                     errors: resultValidations.mapped(),
                     oldData: req.body,
                     oldImage: user.imagen,
                     oldEmail: user.email
                 });
-            } else{
+            } else {
                 const usuario = await db.User.findByPk(req.body.id);
                 let user = {
                     id: usuario.id,
@@ -135,7 +115,7 @@ const userController = {
                 else
                     user.imagen = usuario.imagen;
 
-                await db.User.update({...user},{
+                await db.User.update({ ...user }, {
                     where: {
                         id: user.id
                     }
@@ -149,41 +129,6 @@ const userController = {
             console.log(error);
         }
     },
-    // update: (req, res) => {
-    //     const resultValidations = validationResult(req);
-    //     let index = users.findIndex(function (user) {
-    //         return user.id == req.body.id;
-    //     })
-    //     if (!resultValidations.isEmpty()) {
-    //         console.log(resultValidations.errors)
-    //         res.render("users/userEdit", {
-    //             errors: resultValidations.mapped(),
-    //             oldData: req.body,
-    //             oldImage: users[index].imagen,
-    //             oldEmail: users[index].email
-    //         });
-    //     } else {
-    //         let user = {
-    //             id: users[index].id,
-    //             nombre: req.body.nombre,
-    //             apellido: req.body.apellido,
-    //             email: users[index].email,
-    //             categoria: users[index].categoria,
-    //         }
-    //         if (req.body.password)
-    //             user.password = bcryptjs.hashSync(req.body.password, 10);
-    //         else
-    //             user.password = users[index].password;
-    //         if (req.file)
-    //             user.imagen = "/img/users/" + req.file.filename;
-    //         else
-    //             user.imagen = users[index].imagen;
-    //         //users[index] = user;
-    //         //fs.writeFileSync(usersFilePath, JSON.stringify(users));
-    //         req.session.userLogged = user;
-    //         res.redirect('/user/profile');
-    //     }
-    // },
     edit: function (req, res) {
         const id = req.params.id;
         //const user = users.find((user) => user.id == id);
@@ -196,10 +141,10 @@ const userController = {
                 id: req.params.id
             }
         })
-        .then(res.redirect("/products"))
-        .catch(error => {
-            console.log(error);
-        })
+            .then(res.redirect("/products"))
+            .catch(error => {
+                console.log(error);
+            })
     }
 }
 

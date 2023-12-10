@@ -33,8 +33,13 @@
     </label>
     <div>
         <button type="submit" id="button">Iniciar sesión</button>
-    </div>
-    <span class="link">¿No tienes una cuenta?<a href="#"> Registrate</a></span
+        <% if(locals.errors && errors.sesion){ %>
+          <div>
+            <p class="error-msg">*<%= errors.sesion.msg %></p>
+          </div>
+        <% } %>
+     </div>
+    <span class="link">¿No tienes una cuenta?<a href="/user/register"> Registrate</a></span
     >
   </form>
 </main>

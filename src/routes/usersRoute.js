@@ -36,7 +36,7 @@ userRoute.post("/register",userValidator,userController.save);
 
 userRoute.get("/edit/:id",userLoggedMiddleware,userController.edit);
 
-userRoute.post("/update", uploadFile.single("image"),userEditValidator,userController.update);
+userRoute.post("/update", uploadFile.single("imagen"),userEditValidator,userController.update);
 
 userRoute.post("/delete/:id", userController.delete);
 

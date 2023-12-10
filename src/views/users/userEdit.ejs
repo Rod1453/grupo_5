@@ -35,8 +35,11 @@
                         <% if (locals.errors && errors.confirmPassword) { %>
                             <p class="error-msg">*<%= errors.confirmPassword.msg %></p>
                         <% } %>
-                        <label for="image">Subir foto de perfil</label>
-                        <input class="entrada" type="file" name="image" id="image">
+                        <label for="imagen">Subir foto de perfil</label>
+                        <input class="entrada" type="file" name="imagen" id="imagen">
+                        <% if (locals.errors && errors.imagen) { %>
+                            <p class="error-msg">*<%= errors.imagen.msg %></p>
+                        <% } %>
                         <div class="button-group">
                             <button type="submit">Guardar</button>
                             <a href=""></a>
