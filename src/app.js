@@ -3,13 +3,15 @@ const app = express();
 const mainRoute = require("./routes/mainRoute");
 const userRoute = require("./routes/usersRoute");
 const productRoute = require("./routes/productsRoute");
-const orderRoute = require("./routes/orderRorute");
+const orderRoute = require("./routes/orderRoute");
+const cartRoute = require("./routes/cart");
 
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middleware/userLoggedMiddleware");
 
 const methodOverride = require('method-override');
+
 
 app.use(
     session({
@@ -40,3 +42,9 @@ app.use('/user',userRoute);
 app.use('/products',productRoute);
 
 app.use('/orders',orderRoute);
+
+app.use('/carts',cartRoute);
+
+app.use((req, res) => {
+  res.status(404).send('Página no encontrada');
+});

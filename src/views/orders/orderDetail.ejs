@@ -12,40 +12,43 @@
             <h3>Resumen</h3>
             <div class="detResumen">
                 <p>Total productos</p>
-                <p>2</p>
+                <p><%= books.cantidad %></p>
             </div>
             <div class="detResumen">
                 <p>Total del pedido</p>
-                <p>$ 0.00</p>
+                <p>$ <%= books.total %></p>
             </div>
         </section>
         <section  class="info">
-            <article class="detLibro">
-                <div class="divImagen">
-                    <div class="imagen">
-                        <img src="/img/images.png" alt="img">
-                    </div>
-                </div>
-                <div class="detalle">
-                    <div>
-                        <div class="titulo">
-                            <h3>Titulo del libro</h3>
-                        </div>
-                        <div class="infoLibro">
-                            <p>Autor: Nombre del autor</p>
-                            <p>Tematica: Tematica</p>
+           <% books.libros.map(libro => { %>
+                <article class="detLibro">
+                    <div class="divImagen">
+                        <div class="imagen">
+                            <img src="/img/products/<%= libro.product.imagen %>" alt="img">
                         </div>
                     </div>
-                    <div class="iconos">
-                        <div class="precio">
-                            <p>$ 0.00</p>
+                    <div class="detalle">
+                        <div>
+                            <div class="titulo">
+                                <h3><%= libro.product.titulo %></h3>
+                            </div>
+                            <div class="infoLibro">
+                                <p>Autor: <%= libro.product.autor %></p>
+                                <p>Tematica: <%= libro.product.theme.nombre %></p>
+                            </div>
                         </div>
-                        <div class="cantidad">
-                            <p>2</p>
+                        <div class="iconos">
+                            <div class="precio">
+                                <p>$ <%= libro.precio %></p>
+                            </div>
+                            <div class="cantidad">
+                                <p><%= libro.cantidad %></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            <% }) %>
+            
         </section>
     </div>
 </main>

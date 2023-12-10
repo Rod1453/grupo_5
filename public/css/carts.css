@@ -1,0 +1,44 @@
+
+.resumen{
+    height: 200px;
+}
+
+.resumen .detResumen{
+    margin: 7px 0;
+}
+
+.resumen .detResumen p{
+    margin: 5px 0;
+}
+
+.resumen .divTramitar{
+    text-align: center;
+    margin: 15px 0;
+}
+
+.resumen .divTramitar .btn-tramitar{
+    text-decoration: none;
+    background-color: #ECB390;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.info .detLibro .detalle .iconos .divBtn{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.info .detLibro .detalle .iconos .divBtn .btn-eliminarProducto{
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

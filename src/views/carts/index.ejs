@@ -1,0 +1,75 @@
+<%- include('../partials/headParte1') %>
+<!--Aqui se agregan los estilos personales-->
+<link rel="stylesheet" href="/css/orderDetail.css">
+<link rel="stylesheet" href="/css/carts.css">
+
+<%- include('../partials/headParte2') %>
+
+<%- include('../partials/header') %>
+
+
+<main>
+    <div class="container">
+        <section class="resumen">
+            <h3>Resumen</h3>
+            <div class="detResumen">
+                <p>Total productos</p>
+                <p><%= cart.cantidad %></p>
+            </div>
+            <div class="detResumen">
+                <p>Total del pedido</p>
+                <p>$ <%= cart.total %></p>
+            </div>
+            <div class="divTramitar">
+                <form action="/orders/create" method="POST">
+                    <button type="submit" class="btn-tramitar">Tramitar Pedido</button>
+                </form>
+            </div>
+        </section>
+        <section  class="info">
+            <% if (cart.books.length > 0) { %>
+                <% cart.books.map(book => { %>
+                    <article class="detLibro">
+                        <div class="divImagen">
+                            <div class="imagen">
+                                <img src="/img/products/<%= book.product.imagen %>" alt="img">
+                            </div>
+                        </div>
+                        <div class="detalle">
+                            <div>
+                                <div class="titulo">
+                                    <h3><%= book.product.titulo %></h3>
+                                </div>
+                                <div class="infoLibro">
+                                    <p>Autor: <%= book.product.autor %></p>
+                                    <p>Tematica: <%= book.product.theme.nombre %></p>
+                                </div>
+                            </div>
+                            <div class="iconos">
+                                <div class="precio">
+                                    <p>$ <%= book.precio %></p>
+                                </div>
+                                <div class="cantidad">
+                                    <a href="#"> <i class="fa-regular fa-square-minus"></i></a>
+                                    <p><%= book.cantidad %></p>
+                                    <a href="#"> <i class="fa-regular fa-square-plus"></i></a>
+                                </div>
+                                <div class="divBtn">
+                                    <form action="/carts/delete/<%= book.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                        <button type="submit" class="btn-eliminarProducto">
+                                             Eliminar
+                                        </button> 
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                <% }) %>
+            <% } else{ %>
+                <h2>Sin productos</h2>
+            <% } %>
+        </section>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

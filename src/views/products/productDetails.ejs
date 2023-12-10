@@ -23,7 +23,10 @@
                 <h3><%= book.precio %> $$</h3>
             </div>
             <div>
-                <button class="btn-agregar">Añadir</button>
+                <form action="/carts/create" method="POST">
+                    <input type="hidden" value="<%= book.id %>" name="id">
+                    <button type="submit" class="btn-agregar">Añadir</button>
+                </form>
             </div>
             <div class="libro-sinopsis">
                 <h3>Sinópsis</h3>

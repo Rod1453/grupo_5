@@ -8,44 +8,46 @@
 
 <main>
     <div class="container">
-        <h2>Lista de Pedidos</h2>
-        <% if(orders.length > 0) {%>
-            <% orders.map(order => { %>
-                <article class="pedido">
-                    <div class="divPedido">
-                        <div class="divImagen">
-                            <div class="imagen">
-                                <img src="/img/images.png" alt="">
+        <% if( locals.userLogged) { %>
+            <h2>Lista de Pedidos</h2>
+            <% if(orders.length > 0) {%>
+                <% orders.map(order => { %>
+                    <article class="pedido">
+                        <div class="divPedido">
+                            <div class="divImagen">
+                                <div class="imagen">
+                                    <img src="/img/products/<%= order.cart[0].product.imagen %>" alt="img">
+                                </div>
+                            </div>
+                            <div class="infoPedido">
+                                <div class="numPedido">
+                                    <h3>Numero de pedido</h3>
+                                    <p>#<%= String(order.id).padStart(8,0) %></p>
+                                </div>
+                                <div class="numPedido">
+                                    <h3>Fecha de pedido</h3>
+                                    <p><%= order.fecha %></p>
+                                </div>
+                            </div>
+                            <div class="infoPedido">
+                                <div class="numPedido">
+                                    <h3>Cantidad de productos</h3>
+                                    <p><%= order.cantidad %></p>
+                                </div>
+                                <h3>Total: <%= order.total %>$</h3>
+                            </div>
+                            <div class="verBtnPedido">
+                                <a class="btn-ver2" href="/orders/detail/<%= order.id %>">Ver pedido</a>
                             </div>
                         </div>
-                        <div class="infoPedido">
-                            <div class="numPedido">
-                                <h3>Numero de pedido</h3>
-                                <p>#<%= String(order.id).padStart(8,0) %></p>
-                            </div>
-                            <div class="numPedido">
-                                <h3>Fecha de pedido</h3>
-                                <p><%= order.fecha %></p>
-                            </div>
+                        <div class="verPedido">
+                            <a class="btn-ver" href="#">Ver pedido</a>
                         </div>
-                        <div class="infoPedido">
-                            <div class="numPedido">
-                                <h3>Cantidad de productos</h3>
-                                <p>2</p>
-                            </div>
-                            <h3>Total: 0.00$</h3>
-                        </div>
-                        <div class="verBtnPedido">
-                            <a class="btn-ver2" href="/orders/detail">Ver pedido</a>
-                        </div>
-                    </div>
-                    <div class="verPedido">
-                        <a class="btn-ver" href="#">Ver pedido</a>
-                    </div>
-                </article>
-            <% }) %>
-        <% }else{ %>
-            <h3>------------Sin registro------------</h3>
+                    </article>
+                <% }) %>
+            <% }else{ %>
+                <h3>------------Sin registro------------</h3>
+            <% } %>
         <% } %>
     </div>
 </main>

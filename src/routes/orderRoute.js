@@ -5,6 +5,8 @@ const orderRoute = express.Router();
 
 orderRoute.get('/', orderController.index);
 
-orderRoute.get('/detail', orderController.getOrder);
+orderRoute.get('/detail/:id', orderController.getOrder);
+
+orderRoute.post('/create', orderController.store);
 
 module.exports = orderRoute;
