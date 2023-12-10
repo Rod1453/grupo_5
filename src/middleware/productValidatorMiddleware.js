@@ -3,7 +3,8 @@ const path = require('path');
 
 const validations = [
     body("titulo")
-        .notEmpty().withMessage("Este campo no puede estar vacio."),
+        .notEmpty().withMessage("Este campo no puede estar vacio.").bail()
+        .isLength({ min: 5 }).withMessage("el titulo debe almenos tenes 5 caracteres."),
     body("autor")
         .notEmpty().withMessage("Este campo no puede estar vacio."),
     body("editorial")
@@ -27,7 +28,8 @@ const validations = [
         .notEmpty().withMessage("Este campo no puede estar vacio."),
         //.isDate().withMessage("Este campo debe ser una fecha valida."),
     body("sinopsis")
-        .notEmpty().withMessage("Este campo no puede estar vacio."),
+        .notEmpty().withMessage("Este campo no puede estar vacio.").bail()
+        .isLength({ min: 20 }).withMessage("la sinopsis debe tener al menos 20 caracteres"),
     body("portada").custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = [".jpg",".jpeg", ".png", ".gif"];

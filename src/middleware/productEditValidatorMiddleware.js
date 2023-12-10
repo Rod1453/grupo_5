@@ -2,7 +2,8 @@ const { body } = require('express-validator');
 
 const validations = [
     body("titulo")
-        .notEmpty().withMessage("Este campo no puede estar vacio."),
+        .notEmpty().withMessage("Este campo no puede estar vacio.").bail()
+        .isLength({ min: 5 }).withMessage("el titulo debe almenos tenes 5 caracteres."),
     body("autor")
         .notEmpty().withMessage("Este campo no puede estar vacio."),
     body("editorial")
@@ -26,7 +27,8 @@ const validations = [
         .notEmpty().withMessage("Este campo no puede estar vacio."),
         // .isDate().withMessage("Este campo debe ser un año valido."),
     body("sinopsis")
-        .notEmpty().withMessage("Este campo no puede estar vacio."),
+        .notEmpty().withMessage("Este campo no puede estar vacio.").bail()
+        .isLength({ min: 20 }).withMessage("la sinopsis debe tener al menos 20 caracteres"),
 ];
 
 module.exports = validations;
