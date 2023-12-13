@@ -50,7 +50,7 @@ const userController = {
         res.redirect("/");
     },
     save: async (req, res) => {
-        const resultValidations = validationResult(req);
+        const resultValidations = validationResult(req);console.log("Aqui estoy");
         if (!resultValidations.isEmpty())
             return res.render("users/register", {
                 errors: resultValidations.mapped(),
@@ -80,7 +80,7 @@ const userController = {
                 if (typeof req.body.remember_user !== 'undefined') {
                     res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
                 }
-                return res.redirect('/user/profile');
+                return res.redirect('/products');
             })
             .catch(error => {
                 console.log(error);

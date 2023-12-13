@@ -5,13 +5,13 @@ window.addEventListener("load",function () {
     const expresiones = {
         nombre:/^[a-zA-ZÀ-ÿ\s]{2,40}$/ , // Letras y espacios, pueden llevar acentos.
         apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
-        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        contrasena: /^(?=.*[A-Z].+)(?=.*[!@#$&*])(?=.*[0-9].+)(?=.*[a-z].+).{8,}$/  // 4 a 12 digitos
+        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        contrasena: /^(?=.*[A-Z].+)(?=.*[!@#$&*_-])(?=.*[0-9].+)(?=.*[a-z].+).{8,}$/  // 4 a 12 digitos
     }
     const campos = {
         nombre: false,
         apellido: false,
-        correo: false,
+        email: false,
         passWord: false
     }
     function validarFormulario(e){
@@ -22,8 +22,8 @@ window.addEventListener("load",function () {
             case "apellido":
                 validarCampo(expresiones.apellido, e.target, 'apellido');
             break;
-            case "correo":
-                validarCampo(expresiones.correo, e.target, 'correo');
+            case "email":
+                validarCampo(expresiones.email, e.target, 'email');
             break;
             case "password":
                 validarCampo(expresiones.contrasena, e.target, 'password');
@@ -81,7 +81,8 @@ window.addEventListener("load",function () {
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
         const terminos = document.getElementById('terminos');
-        if(campos.nombre && campos.apellido && campos.password && campos.correo){
+        if(campos.nombre && campos.apellido && campos.password && campos.email){
+            formulario.submit();
             formulario.reset();
 
             document.querySelectorAll('.grupo-correcto').forEach((icono) => {
