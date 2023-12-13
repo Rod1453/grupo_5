@@ -183,7 +183,10 @@ header {
 }
 
 /*Fin del navbar */
-
+/*main*/
+h2{
+    padding: 20px;
+}
 /* FOOTER */
 .logofooter{
     width: 40%;

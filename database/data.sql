@@ -1,4 +1,3 @@
-
 /*Agregando tematicas*/
 INSERT INTO theme(nombre)
 VALUES ('Computación'),('Fantasía'),('Ficción'),('Cocina'),('Videojuegos'),('Terror'),('Ciencia Ficcion'),

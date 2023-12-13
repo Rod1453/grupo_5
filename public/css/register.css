@@ -1,20 +1,106 @@
 main form label{
-    margin-bottom: 7px;
-    text-align: left;
-}
-
-main form input {
-    outline: none;
-    border: none;
-    color: #252525;
-    border-bottom: solid 1px #666;
-    padding: 10px 15px 10px;
-    font-size: 18px;
-    border-radius: 20px;
-    background-color: #ebebeb;
-    margin-bottom: 20px;
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 10px;
 }
 
 main form {
-    margin: 10px 10px;
+    margin: 5px 5px;
+    width: 500px;
+    height: 50%;
+}
+
+.input {
+    border:1px solid transparent;
+    color: #252525;
+    border-bottom: solid 1px #666;
+    padding: 10px 15px 10px;
+    font-size: 17px;
+    border-radius: 20px;
+    background-color: #ebebeb;
+    width: 100%;
+    transition: .3 ease all;
+}
+.input:focus{
+    border:2px solid #848484;
+    outline: none;
+    box-shadow: 3px 0px 30px rgb(163, 163, 163, 0.4 );
+}
+
+.mensajeError{
+	font-size: 15px;
+	margin-bottom: 0;
+	display: none;
+    padding: 10px 0px 10px 0px;
+}
+.mensajeError-activo{
+	display: block;
+    color:#bb2929;
+}
+
+.estadoValidacion{
+    position: absolute;
+	right: 16px;
+	bottom: 14px;
+	z-index: 100;
+	font-size: 16px;
+    opacity: 0;
+}
+
+#button{
+    margin: 20px 0px;
+}
+.formInput{
+    position: relative;
+}
+
+
+.mensaje {
+	display: none;
+}
+
+.mensaje-activo {
+	display: block;
+}
+
+.mensaje-error {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 30px;
+	display: none;
+}
+
+.mensaje-error-activo {
+	display: block;
+}
+
+.mensaje-error p {
+	margin: 0;
+}
+/*VALIDACION*/
+.grupo-correcto .label{
+	color: #2fd63d;
+}
+.grupo-correcto .estadoValidacion{
+    color: #2fd63d;
+    opacity: 1;
+}
+.grupo-correcto .input{
+    border:2px solid #2fd63d;
+	color: #2fd63d;
+}
+.grupo-incorrecto .label{
+	color: #bb2929;
+}
+.grupo-incorrecto .estadoValidacion{
+	color: #bb2929;
+    opacity: 1;
+}
+.grupo-incorrecto .input{
+    border:2px solid #bb2929;
+	color: #bb2929;
 }

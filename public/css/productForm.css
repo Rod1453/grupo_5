@@ -4,7 +4,7 @@
 
 .content{
     max-width: 1170px;
-     margin-left: auto;
+    margin-left: auto;
     margin-right: auto; 
     padding: 1.5em;
 }
@@ -14,6 +14,7 @@
 }
 
 .box{
+    border-radius: 30px;
     background: #fff;
     box-shadow: 0 5px 10px rgba(110, 92, 93, 0.7);
 }
@@ -47,6 +48,7 @@ border-bottom: 1px solid #94B49F;
     text-transform: uppercase;
     padding: 1em;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 .libro-form form button:hover,
@@ -69,6 +71,36 @@ outline: 0;
     border-bottom: 1px solid #94B49F;
 }
 
+
+.mensajeError{
+	font-size: 15px;
+	margin-bottom: 0;
+	display: none;
+    padding: 10px 0px 10px 0px;
+}
+.mensajeError-activo{
+	display: block;
+    color:#bb2929;
+}
+.mensaje-error {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0px;
+	border-radius: 30px;
+	display: none;
+    
+}
+.mensaje-error p{
+    margin: 0;
+    padding: 0em;
+}
+.mensaje-error-activo {
+	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Responsive */
 @media (min-width: 720px){
     .libro-form form{

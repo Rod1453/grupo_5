@@ -1,7 +1,7 @@
 <%- include('../partials/headParte1') %>
 <!--Aqui se agregan los estilos personales-->
 <link rel="stylesheet" href="/css/productForm.css">
-
+<script src="../script/productForm.js"></script>
 <%- include('../partials/headParte2') %>
 
 <%- include('../partials/header') %>
@@ -14,58 +14,78 @@
     <div class="box">
       <div class="libro-form">
           <h1 class="titulo">Editar libro</h1>
-          <form action="/products/edit/<%= book.id %>?_method=PUT" method="POST">
-            <div>
+          <form action="/products/edit/<%= book.id %>?_method=PUT" method="POST" id="formulario">
+            <div id="grupo_titulo">
               <p>
                 <label for="titulo">Título</label>
                 <input type="text" name="titulo" id="titulo"
                   value="<%=locals.oldData?oldData.titulo: book.titulo %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos tenes 5 caracteres.</li>
+                  </ul>
                 <% if (locals.errors && errors.titulo) { %>
                   <p class="error-msg">*<%= errors.titulo.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+             <div id="grupo_autor">
               <p>
                 <label for="autor">Autor</label>
                 <input type="text" name="autor" id="autor"
                   value="<%=locals.oldData?oldData.autor: book.autor %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos tenes 2 caracteres.</li>
+                  </ul>
                 <% if (locals.errors && errors.autor) { %>
                   <p class="error-msg">*<%= errors.autor.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_editorial">
               <p>
                 <label for="editorial">Editorial</label>
                 <input type="text" name="editorial" id="editorial"
                   value="<%=locals.oldData?oldData.editorial: book.editorial %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos tenes 2 caracteres.</li>
+                  </ul>
                 <% if (locals.errors && errors.editorial) { %>
                   <p class="error-msg">*<%= errors.editorial.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_paginas">
               <p>
                 <label for="paginas">Páginas</label>
                 <input type="number" name="paginas" id="paginas"
                   value="<%=locals.oldData?oldData.paginas: book.paginas %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos tener mas de 1 pagina.</li>
+                  </ul>
                 <% if (locals.errors && errors.paginas) { %>
                   <p class="error-msg">*<%= errors.paginas.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_idioma">
               <p>
                 <label for="idioma">Idioma</label>
                 <input type="text" name="idioma" id="idioma"
                   value="<%=locals.oldData?oldData.idioma: book.idioma %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos tenes 4 caracteres.</li>
+                  </ul>
                 <% if (locals.errors && errors.idioma) { %>
                   <p class="error-msg">*<%= errors.idioma.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_tapa">
               <p>
                 <label for="tipo_tapa">Tipo de Tapa</label>
                 <select name="tipo_tapa">
@@ -73,6 +93,7 @@
                   <option value="Blanda" <%=locals.oldData && oldData.tipo_tapa == 'Blanda'? 'Selected': book.tipo_tapa == 'Blanda'? 'Selected':'' %>>Blanda</option>
                   <option value="Dura" <%=locals.oldData && oldData.tipo_tapa == 'Dura'? 'Selected': book.tipo_tapa == 'Dura'? 'Selected':'' %> >Dura</option>
                 </select>
+                <p class="mensajeError">*Este campo no puede estar vacio.</p>
                 <!-- <input type="text" name="tipo_tapa" id="tipo_tapa"
                   value="<%=locals.oldData?oldData.tipo_tapa: book.tipo_tapa %>"/> -->
                 <% if (locals.errors && errors.tipo_tapa) { %>
@@ -80,7 +101,7 @@
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_tematica">
               <p>
                 <label for="tematica">Temática</label>
                 <select name="tematica">
@@ -90,6 +111,7 @@
                       <%= item.nombre %></option>
                   <% }) %>
                 </select>
+                <p class="mensajeError">*Este campo no puede estar vacio.</p>
                 <!-- <input type="text" name="tematica" id="tematica"
                   value="<%=locals.oldData?oldData.tematica: book.tematica %>"/> -->
                 <% if (locals.errors && errors.tematica) { %>
@@ -97,48 +119,62 @@
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_stock">
               <p>
                 <label for="stock">Stock</label>
                 <input type="number" name="stock" id="stock"
                   value="<%=locals.oldData?oldData.stock: book.stock %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos tener 1 unidad .</li>
+                  </ul>
                 <% if (locals.errors && errors.stock) { %>
                   <p class="error-msg">*<%= errors.stock.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_precio">
               <p>
                 <label for="precio">Precio</label>
                 <input type="number" id="precio" name="precio" min="0" max="9999" placeholder="$"
                   value="<%=locals.oldData?oldData.precio: book.precio %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos un numero .</li>
+                  </ul>
                 <% if (locals.errors && errors.precio) { %>
                   <p class="error-msg">*<%= errors.precio.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_lanzamiento">
               <p>
                 <label for="lanzamiento">Fecha de Lanzamiento</label>
                 <input type="date" name="lanzamiento" id="lanzamiento" value="<%=locals.oldData?oldData.lanzamiento: book.fecha_emision %>">
                 <!-- <input type="text" name="lanzamiento" id="lanzamiento" pattern="^\d{4}$" placeholder="YYYY" 
                   value="<%=locals.oldData?oldData.lanzamiento: book.fecha_emision %>"/> -->
-                <% if (locals.errors && errors.lanzamiento) { %>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                  </ul>
+                  <% if (locals.errors && errors.lanzamiento) { %>
                   <p class="error-msg">*<%= errors.lanzamiento.msg %></p>
                 <% } %>
               </p>
             </div>
-            <div>
+            <div id="grupo_sinopsis" class="block">
               <p>
                 <label for="sinopsis">Sinopsis</label>
                 <input type="text" name="sinopsis" id="sinopsis"
                   value="<%=locals.oldData?oldData.sinopsis: book.sinopsis %>"/>
+                  <ul class="mensajeError">
+                    <li>*Este campo no puede estar vacio.</li>
+                    <li>*Debe tener almenos tenes 20 caracteres.</li>
+                  </ul>
                 <% if (locals.errors && errors.sinopsis) { %>
                   <p class="error-msg">*<%= errors.sinopsis.msg %></p>
                 <% } %>
               </p>
             </div>
-            
             <!-- <p class="block">
               <label for="portada">Seleccione Foto de Portada</label>
               <input type="file" name="portada" id="portada">
@@ -148,6 +184,9 @@
                 Guardar cambios
               </button>
             </p>
+            <div class="mensaje-error block" id="mensaje-error">
+              <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Llene el formulario correctamente. </p>
+            </div>
           </form>
       </div>
       <div class="libro-image">

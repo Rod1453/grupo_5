@@ -1,44 +1,71 @@
 <%- include('../partials/headParte1') %>
 <!--Aqui se agregan los estilos personales-->
 <link rel="stylesheet" href="../css/login.css" />
-
+<script src="../script/login.js"></script>
 <%- include('../partials/headParte2') %>
 
 <%- include('../partials/header') %>
 
 <main>
-  <form action="/user/loginProcess" method="post">
+  <form action="/user/loginProcess" method="post" id="formulario_login">
+    <!-- Grupo: Correo -->
     <h2 class="title">Iniciar Sesión</h2>
-    <label>
-      <i class="fa-solid fa-user"></i>
-      <input type="text" name="email" id="email" placeholder="correo electrónico" 
-      value="<%= locals.oldData || locals.email? locals.oldData? locals.oldData.email: email:null %>"/>
-      <% if(locals.errors && errors.email){ %>
-        <div>
-          <p class="error-msg">*<%= errors.email.msg %></p>
+    <div id="grupo_correo" class="grupo">
+      <label class="label">
+        <div class="formInput">
+          <i class="fa-solid fa-user"></i>
+          <input class="input" type="text" id="email" name="correo" placeholder="correo electrónico" 
+          value="<%= locals.oldData || locals.email? locals.oldData? locals.oldData.email: email:null %>"/>
         </div>
-      <% } %>
-    </label>
-    <label>
-      <i class="fa-solid fa-lock"></i>
-      <input type="password" name="password" id="password" placeholder="contraseña" />
-      <% if(locals.errors && errors.password){ %>
-        <div>
-          <p class="error-msg">*<%= errors.password.msg %></p>
+        <ul class="mensajeError">
+          <li>*El email es requerido</li>
+          <li>*Email invalido.</li>
+        </ul>
+        <% if(locals.errors && errors.email){ %>
+          <div>
+            <p class="error-msg">*<%= errors.email.msg %></p>
+          </div>
+        <% } %>
+      </label>
+    </div>
+    <!-- Grupo: Contraseña -->
+    <div id="grupo_password" class="grupo">
+      <label class="label">
+        <div class="formInput">
+          <i class="fa-solid fa-lock"></i>
+          <input class="input" type="password" name="password" id="password" placeholder="contraseña" />
         </div>
-      <% } %>
-    </label>
+        <ul class="mensajeError">
+          <li>*La contraseña es requerida</li>
+        </ul>
+        <% if(locals.errors && errors.password){ %>
+          <div>
+            <p class="error-msg">*<%= errors.password.msg %></p>
+          </div>
+        <% } %>
+      </label>
+    </div>
+
+
     <label>
       <input type="checkbox" name="remember_user"> Recordar mi usuario
     </label>
+  
+
     <div>
         <button type="submit" id="button">Iniciar sesión</button>
+        <p class="mensaje" id="mensaje">Bienvenido!</p>
         <% if(locals.errors && errors.sesion){ %>
           <div>
             <p class="error-msg">*<%= errors.sesion.msg %></p>
           </div>
         <% } %>
      </div>
+
+     <div class="mensaje-error" id="mensaje-error">
+      <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Llene el formulario correctamente. </p>
+    </div>
+
     <span class="link">¿No tienes una cuenta?<a href="/user/register"> Registrate</a></span
     >
   </form>
