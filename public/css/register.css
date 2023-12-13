@@ -42,8 +42,8 @@ main form {
 
 .estadoValidacion{
     position: absolute;
-	right: 16px;
-	bottom: 14px;
+	right: 35px;
+	bottom: 23px;
 	z-index: 100;
 	font-size: 16px;
     opacity: 0;
