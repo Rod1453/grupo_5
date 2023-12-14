@@ -5,6 +5,7 @@ const userRoute = require("./routes/usersRoute");
 const productRoute = require("./routes/productsRoute");
 const orderRoute = require("./routes/orderRoute");
 const cartRoute = require("./routes/cart");
+const cors = require('cors')
 
 //Apis
 const apiProductRoute = require("./routes/api/productApiRoute");
@@ -35,6 +36,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(methodOverride('_method'));
+
+let corsOptions = {
+  origin:"*"
+}
+app.use(cors(corsOptions))
 
 app.listen(3000, () => console.log("servidor escuchando en el puerto 3000"));
 

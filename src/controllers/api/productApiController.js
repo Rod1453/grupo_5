@@ -27,6 +27,7 @@ const productApiController = {
                     titulo: book.titulo,
                     theme_id: book.theme_id,
                     sinopsis: book.sinopsis,
+                    imagen: "http://localhost:3000/img/products/"+book.imagen,
                     detail: "http://localhost:3000/api/products/"+book.id
                 }
             })
@@ -133,9 +134,11 @@ const productApiController = {
         try {
             const countSold = await db.Cart.sum('cantidad');
             const countOrders = await db.Order.count();
+            const count = await db.Product.count();
             res.status(200).json({
                 productSold: countSold,
-                acountOrders: countOrders
+                acountOrders: countOrders,
+                count: count
             });
         } catch (error) {
             console.error("Error al consultar la cantidad de productos vendidios y total de ventas.", error);
@@ -146,7 +149,7 @@ const productApiController = {
         try {
             const books = await db.Product.findAll({
                 order: [['id','DESC']],
-                limit: 5
+                limit: 5,
             });
             const mostSold = await db.Cart.findAll({
                 attributes: ['product_id',[sequelize.fn('SUM', sequelize.col('cantidad')),'acountSold']],
@@ -154,6 +157,7 @@ const productApiController = {
                 order: ['acountSold'],
                 limit: 5
             });
+            books.forEach(book=>book.imagen="http://localhost:3000/img/products/"+book.imagen)
             res.status(200).json({
                 lastProducts: books,
                 mostSold: mostSold 

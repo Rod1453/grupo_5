@@ -6,4 +6,8 @@ apiUserRoute.get('/', userApiController.list);
 
 apiUserRoute.get('/:id', userApiController.show);
 
+apiUserRoute.get('/list/count', userApiController.count);
+
+apiUserRoute.get('/find/lastUser', userApiController.lastUser);
+
 module.exports = apiUserRoute;
