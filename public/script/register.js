@@ -6,13 +6,14 @@ window.addEventListener("load",function () {
         nombre:/^[a-zA-ZÀ-ÿ\s]{2,40}$/ , // Letras y espacios, pueden llevar acentos.
         apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        contrasena: /^(?=.*[A-Z].+)(?=.*[!@#$&*_-])(?=.*[0-9].+)(?=.*[a-z].+).{8,}$/  // 4 a 12 digitos
+        password: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,10}$/
     }
     const campos = {
         nombre: false,
         apellido: false,
         email: false,
-        passWord: false
+        password: false,
+        password2:false
     }
     function validarFormulario(e){
         switch (e.target.name) {
@@ -26,34 +27,37 @@ window.addEventListener("load",function () {
                 validarCampo(expresiones.email, e.target, 'email');
             break;
             case "password":
-                validarCampo(expresiones.contrasena, e.target, 'password');
+                validarCampo(expresiones.password, e.target, 'password');
                 validarPassword2();
             break;
             case "password2":
+                validarCampo(expresiones.password, e.target, 'password2');
                 validarPassword2();
             break;
             
         }
     }
-    let validarPassword2 = () => {
+    const validarPassword2 = () => {
         const inputPassword1 = document.getElementById('password');
         const inputPassword2 = document.getElementById('confirmPassword');
-        if(inputPassword1.value !== inputPassword2.value){
-            document.getElementById(`grupo_password2`).classList.add('grupo-incorrecto');
-            document.getElementById(`grupo_password2`).classList.remove('grupo-correcto');
-            document.querySelector(`#grupo_password2 i`).classList.add('fa-times');
-            document.querySelector(`#grupo_password2 i`).classList.remove('fa-check');
-            document.querySelector(`#grupo_password2 .mensajeError`).classList.add('mensajeError-activo');
-            campos['passWord'] = false;
-        } else {
+    
+        if(inputPassword1.value === inputPassword2.value){
             document.getElementById(`grupo_password2`).classList.remove('grupo-incorrecto');
             document.getElementById(`grupo_password2`).classList.add('grupo-correcto');
             document.querySelector(`#grupo_password2 i`).classList.remove('fa-times');
             document.querySelector(`#grupo_password2 i`).classList.add('fa-check');
             document.querySelector(`#grupo_password2 .mensajeError`).classList.remove('mensajeError-activo');
-            campos['passWord'] = true;
+            campos['password'] = true;
+        } else {
+            document.getElementById(`grupo_password2`).classList.add('grupo-incorrecto');
+            document.getElementById(`grupo_password2`).classList.remove('grupo-correcto');
+            document.querySelector(`#grupo_password2 i`).classList.add('fa-times');
+            document.querySelector(`#grupo_password2 i`).classList.remove('fa-check');
+            document.querySelector(`#grupo_password2 .mensajeError`).classList.add('mensajeError-activo');
+            campos['password'] = false;
         }
     }
+    
 
     function validarCampo(expresion,input,campo){
         if(expresion.test(input.value)){
@@ -77,11 +81,14 @@ window.addEventListener("load",function () {
         inputs[i].addEventListener('keyup', validarFormulario);
         inputs[i].addEventListener('blur', validarFormulario);
     }
+    
+    document.getElementById('confirmPassword').addEventListener('keyup', validarFormulario);
+    document.getElementById('confirmPassword').addEventListener('blur', validarFormulario);
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
         const terminos = document.getElementById('terminos');
-        if(campos.nombre && campos.apellido && campos.password && campos.email){
+        if(campos.nombre && campos.apellido && campos.password && campos.password && campos.email){
             formulario.submit();
             formulario.reset();
 

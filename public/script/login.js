@@ -4,7 +4,7 @@ window.addEventListener("load",function () {
     
     const expresiones = {
         correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        contrasena: /^(?=.*[A-Z].+)(?=.*[!@#$&*])(?=.*[0-9].+)(?=.*[a-z].+).{8,}$/  // 4 a 12 digitos
+        contrasena: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,10}$/ 
     }
     const campos = {
         correo: false,

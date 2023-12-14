@@ -62,12 +62,12 @@
     <div id="grupo_password" class="grupo">
     <label for="password" class="label">Contraseña</label>
     <div class="formInput">
-      <input class="input" type="password" id="password" name="password" placeholder="Ej:Mateo123!"/>
+      <input class="input" type="password" id="password" name="password" placeholder="Ej:Mateo123"/>
       <i class="estadoValidacion fa-solid fa-xmark"></i>
     </div>
     <ul class="mensajeError">
       <li>*Debe tener al menos 8 caracteres</li>
-      <li>*Debe tener min, may, num y un cartacter especial</li>
+      <li>*Debe tener minuscula, mayuscula y un numero</li>
     </ul>
       <% if (locals.errors && errors.password) { %>
         <p class="error-msg">*<%= errors.password.msg %></p>
@@ -77,7 +77,7 @@
     <div id="grupo_password2" class="grupo">
     <label for="confirmPassword" class="label">Confirmar contraseña</label>
     <div class="formInput">
-      <input class="input" type="password" id="confirmPassword" name="confirmPassword" placeholder="Ej:Mateo123!"/>
+      <input class="input" type="password" id="confirmPassword" name="confirmPassword" placeholder="Ej:Mateo123"/>
       <i class="estadoValidacion fa-solid fa-xmark"></i>
     </div>
     <ul class="mensajeError">
