@@ -110,7 +110,7 @@
             <div id="grupo_tematica">
               <p>
                 <label for="tematica">Temática</label>
-                <select name="tematica">
+                <select name="tematica" id="tematica">
                   <option value="Op" >--Seleccione una tematica--</option>
                   <% themes.map(item => { %>
                     <option value="<%= item.id %>" <%=locals.oldData && oldData.tematica == item.id?'selected':'' %>><%= item.nombre %></option>

@@ -50,7 +50,7 @@ const userController = {
         res.redirect("/");
     },
     save: async (req, res) => {
-        const resultValidations = validationResult(req);console.log("Aqui estoy");
+        const resultValidations = validationResult(req);
         if (!resultValidations.isEmpty())
             return res.render("users/register", {
                 errors: resultValidations.mapped(),
