@@ -3,21 +3,20 @@ window.addEventListener("load",function () {
     const inputs = document.querySelectorAll("#formulario_login input");
     
     const expresiones = {
-        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        contrasena: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,10}$/ 
+        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        password: /.{8,25}$/ 
     }
     const campos = {
-        correo: false,
+        email: false,
         password: false
     }
     function validarFormulario(e){
         switch (e.target.name) {
-            case "correo":
-                validarCampo(expresiones.correo, e.target, 'correo');
+            case "email":
+                validarCampo(expresiones.email, e.target, 'email');
             break;
             case "password":
-                validarCampo(expresiones.contrasena, e.target, 'password');
-                
+                validarCampo(expresiones.password, e.target, 'password');
                 break;
             
         }
@@ -45,18 +44,12 @@ window.addEventListener("load",function () {
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
         const terminos = document.getElementById('terminos');
-        if(campos.password && campos.correo){
-            formulario.reset();
-
+        if(campos.password && campos.email){
+            //formulario.reset();
             document.querySelectorAll('.grupo-correcto').forEach((icono) => {
                 icono.classList.remove('grupo-correcto');
             });
-
-            document.getElementById('mensaje').classList.add('mensaje-activo');
-            setTimeout(() => {
-			document.getElementById('mensaje').classList.remove('mensaje-activo');
-		    }, 3000);
-
+            formulario.submit()
             document.getElementById('mensaje-error').classList.remove('mensaje-error-activo');
         } else{
             document.getElementById('mensaje-error').classList.add('mensaje-error-activo');

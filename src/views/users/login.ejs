@@ -10,11 +10,11 @@
   <form action="/user/loginProcess" method="post" id="formulario_login">
     <!-- Grupo: Correo -->
     <h2 class="title">Iniciar Sesión</h2>
-    <div id="grupo_correo" class="grupo">
+    <div id="grupo_email" class="grupo">
       <label class="label">
         <div class="formInput">
           <i class="fa-solid fa-user"></i>
-          <input class="input" type="text" id="email" name="correo" placeholder="correo electrónico" 
+          <input class="input" type="text" id="email" name="email" placeholder="correo electrónico" 
           value="<%= locals.oldData || locals.email? locals.oldData? locals.oldData.email: email:null %>"/>
         </div>
         <ul class="mensajeError">
@@ -36,7 +36,7 @@
           <input class="input" type="password" name="password" id="password" placeholder="contraseña" />
         </div>
         <ul class="mensajeError">
-          <li>*La contraseña es requerida</li>
+          <li>*La contraseña debe ser de al menos 8 caracteres</li>
         </ul>
         <% if(locals.errors && errors.password){ %>
           <div>
@@ -47,10 +47,10 @@
     </div>
 
 
-    <label>
+   <!-- <label>
       <input type="checkbox" name="remember_user"> Recordar mi usuario
     </label>
-  
+  -->
 
     <div>
         <button type="submit" id="button">Iniciar sesión</button>
